@@ -1,0 +1,54 @@
+$caption-width: 100px
+$caption-max: 120px
+
+/* Maximize view height */
+html, body
+  height: 100%
+
+#timeline
+  $top-offset: 100px
+  height: inherit
+  padding-top: $top-offset
+  margin-top: -$top-offset
+
+  > .columns
+    flex-direction: row-reverse
+    margin-left: $caption-max
+    flex-wrap: nowrap
+    overflow-x: auto
+    -webkit-justify-content: flex-start
+    justify-content: flex-start
+    align-items: baseline
+    height: inherit
+
+    > .column
+      -ms-flex: 0 0 auto
+      flex: 0 0 auto
+/* Firefox fix (OMG browser hack in 2018!) */
+@-moz-document url-prefix()
+  #timeline > .columns
+    justify-content: flex-end
+
+.motion
+  width: 240px
+  max-width: 240px
+
+  // li:not(.long)
+  //   text-overflow: ellipsis
+  //   overflow: hidden
+  //   white-space: nowrap
+
+#caption.menu
+  min-width: $caption-width /* overriding spectre */
+  max-width: $caption-max
+  position: absolute
+  left: 0
+
+.tile.tile-centered.motion-header
+  height: 2.5rem
+
+.menu-item
+  min-height: 25px
+
+.glyph, .evidence
+  height: 100%

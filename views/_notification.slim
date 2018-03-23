@@ -1,0 +1,13 @@
+- @note.each do |(n, v)|
+  .toast.toast-warning
+    / using `case` statement requires assignment
+    - c = case n
+    - when :invalid_set
+      span.text-bold => v
+      | is an invalid collection name.
+    - when :invalid_char
+      span.text-bold => v
+      | is an invalid serial number in the collection.
+    - when :empty_set
+      span.text-bold => v
+      | is an empty collection.

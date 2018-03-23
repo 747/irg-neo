@@ -1,0 +1,323 @@
+{:id=>"USAT00077", :glyph=>"USAT00077.bmp", :rad=>140, :sc=>15, :fs=>5, :ts=>0, :ids=>"⿱艹疎", :similar=>" Similar: 䔫/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT00600", :glyph=>"USAT00600.bmp", :rad=>85, :sc=>9, :fs=>4, :ts=>0, :ids=>"⿰氵⿱丿犮", :similar=>" Non-similar and synonymous: 沃/   Similar but semantically different: USAT01485/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT00771", :glyph=>"USAT00771.bmp", :rad=>119, :sc=>15, :fs=>3, :ts=>0, :ids=>"⿰𠤕籴", :similar=>" Similar: USAT01533/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT00930", :glyph=>"USAT00930.bmp", :rad=>75, :sc=>20, :fs=>1, :ts=>0, :ids=>"⿰木薑", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT01034", :glyph=>"USAT01034.bmp", :rad=>61, :sc=>8, :fs=>5, :ts=>0, :ids=>"⿰忄加", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT01366", :glyph=>"USAT01366.bmp", :rad=>30, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿲口木氏", :similar=>" Similar but semantically different: 𠴓/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT01485", :glyph=>"USAT01485.bmp", :rad=>85, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿰氵叐", :similar=>" Similar: 沷/   Similar but semantically different: USAT00600/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT01533", :glyph=>"USAT01533.bmp", :rad=>21, :sc=>14, :fs=>3, :ts=>0, :ids=>"⿰𠤕余", :similar=>" Similar: \u{2D418}/ USAT00771/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT01639", :glyph=>"USAT01639.bmp", :rad=>118, :sc=>19, :fs=>4, :ts=>0, :ids=>"⿱竹⿰忄⿻専丶", :similar=>" Similar: 簙/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT01707", :glyph=>"USAT01707.bmp", :rad=>69, :sc=>21, :fs=>3, :ts=>0, :ids=>"⿱斫⿱⺮𡖈", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>17, :comment=>nil}
+{:id=>"USAT02649", :glyph=>"USAT02649.bmp", :rad=>140, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿱艹⿰亻氏", :similar=>" Similar: 2E3B1/   Non-similar and synonymous: 苽/   Similar but semantically different: 𦰣/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT03106", :glyph=>"USAT03106.bmp", :rad=>9, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿰亻⿻叐丶", :similar=>" Non-similar and synonymous: 俊/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT03136", :glyph=>"USAT03136.bmp", :rad=>30, :sc=>22, :fs=>5, :ts=>0, :ids=>"⿲口女頼", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>19, :comment=>nil}
+{:id=>"USAT03197", :glyph=>"USAT03197.bmp", :rad=>160, :sc=>13, :fs=>1, :ts=>0, :ids=>"⿱辛亘", :similar=>" Non-similar and synonymous: 廣/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT03730", :glyph=>"USAT03730.bmp", :rad=>38, :sc=>17, :fs=>1, :ts=>0, :ids=>"⿰女厲", :similar=>" Non-similar and synonymous: 癘/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT03733", :glyph=>"USAT03733.bmp", :rad=>163, :sc=>19, :fs=>2, :ts=>0, :ids=>"⿲邑出邑", :similar=>" Similar: 𨞔/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT03860", :glyph=>"USAT03860.bmp", :rad=>104, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿸疒攵", :similar=>" Similar: 𤴨/   Similar but semantically different: 𤵒/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT03861", :glyph=>"USAT03861.bmp", :rad=>124, :sc=>11, :fs=>5, :ts=>0, :ids=>"⿰羽民", :similar=>" Similar: 𦐊/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT03866", :glyph=>"USAT03866.bmp", :rad=>111, :sc=>17, :fs=>3, :ts=>0, :ids=>"⿰矢無", :similar=>" Similar: 𤏠/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT03869", :glyph=>"USAT03869.bmp", :rad=>75, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿰木⿱廿⿻𠮡人", :similar=>" Similar but semantically different: 𢴁/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT03892", :glyph=>"USAT03892.bmp", :rad=>40, :sc=>17, :fs=>1, :ts=>0, :ids=>"⿱宀牄", :similar=>" Similar: 瘡/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT04227", :glyph=>"USAT04227.bmp", :rad=>86, :sc=>15, :fs=>5, :ts=>0, :ids=>"⿰火⿳⿰工几寸", :similar=>" Similar: 燖/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT04261", :glyph=>"USAT04261.bmp", :rad=>69, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿰⿱止⿺𠃊貝斤", :similar=>" Similar: 𣂸/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT04262", :glyph=>"USAT04262.bmp", :rad=>18, :sc=>10, :fs=>2, :ts=>0, :ids=>"⿰⿳⺊日匕刀", :similar=>" Similar: 𠝅/ 𠜷/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT04264", :glyph=>"USAT04264.bmp", :rad=>30, :sc=>15, :fs=>5, :ts=>0, :ids=>"⿱⿶凵口⿱田⿵𠘨𠀆", :similar=>" Similar: 𨤦/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT04266", :glyph=>"USAT04266.bmp", :rad=>107, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿰皮句", :similar=>" Similar: 皰/   Similar but semantically different: 𣧬/ 夠/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT04361", :glyph=>"USAT04361.bmp", :rad=>30, :sc=>9, :fs=>1, :ts=>0, :ids=>"⿰口⿱大干", :similar=>" Similar: 𠵃/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT04380", :glyph=>"USAT04380.bmp", :rad=>77, :sc=>4, :fs=>1, :ts=>0, :ids=>"⿱⿰┤丨一", :similar=>" Similar: 𣥂/   Similar but semantically different: 𣥄/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT04408", :glyph=>"USAT04408.bmp", :rad=>53, :sc=>26, :fs=>3, :ts=>0, :ids=>"⿸广讐", :similar=>" Similar: 譍/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>23, :comment=>nil}
+{:id=>"USAT04475", :glyph=>"USAT04475.bmp", :rad=>120, :sc=>19, :fs=>1, :ts=>0, :ids=>"⿰糸𧵩", :similar=>" Similar: 績/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT04665", :glyph=>"USAT04665.bmp", :rad=>130, :sc=>17, :fs=>4, :ts=>0, :ids=>"⿰月⿱寉口", :similar=>" Similar: 𦞦/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT04680", :glyph=>"USAT04680.bmp", :rad=>72, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿰日⿹⿱十弋𠂊", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT04681", :glyph=>"USAT04681.bmp", :rad=>29, :sc=>10, :fs=>2, :ts=>0, :ids=>"⿰尙又", :similar=>" Similar: 𣦻/   Similar but semantically different: 敞/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT04687", :glyph=>"USAT04687.bmp", :rad=>46, :sc=>27, :fs=>1, :ts=>0, :ids=>"⿱山⿱毒⿰毒毒", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>24, :comment=>nil}
+{:id=>"USAT04690", :glyph=>"USAT04690.bmp", :rad=>24, :sc=>17, :fs=>5, :ts=>0, :ids=>"⿱辟午", :similar=>" Similar: 擘/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT04691", :glyph=>"USAT04691.bmp", :rad=>90, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿰爿巠", :similar=>" Similar: 輕/   Similar but semantically different: 牼/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT04692", :glyph=>"USAT04692.bmp", :rad=>90, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿰爿侖", :similar=>" Similar: 輪/   Similar but semantically different: 埨/ 掄/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT04698", :glyph=>"USAT04698.bmp", :rad=>140, :sc=>13, :fs=>4, :ts=>0, :ids=>"⿱艹⿰⿱亠羊刂", :similar=>" Similar: 對/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT04700", :glyph=>"USAT04700.bmp", :rad=>32, :sc=>14, :fs=>1, :ts=>0, :ids=>"⿰土⿱雨亐", :similar=>" Similar: 㙤/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT04701", :glyph=>"USAT04701.bmp", :rad=>112, :sc=>16, :fs=>1, :ts=>0, :ids=>"⿰石⿱雨亐", :similar=>" Similar: 𥕕/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT04707", :glyph=>"USAT04707.bmp", :rad=>61, :sc=>6, :fs=>5, :ts=>0, :ids=>"⿰忄子", :similar=>" Similar: 忬/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT04761", :glyph=>"USAT04761.bmp", :rad=>44, :sc=>5, :fs=>1, :ts=>0, :ids=>"⿸尸十", :similar=>" Similar: 厈/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>2, :comment=>nil}
+{:id=>"USAT05013", :glyph=>"USAT05013.bmp", :rad=>173, :sc=>16, :fs=>3, :ts=>0, :ids=>"⿱雨往", :similar=>" Similar: 霔/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT05015", :glyph=>"USAT05015.bmp", :rad=>142, :sc=>24, :fs=>3, :ts=>0, :ids=>"⿱象䖵", :similar=>" Similar: 𧕠/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>18, :comment=>nil}
+{:id=>"USAT05019", :glyph=>"USAT05019.bmp", :rad=>198, :sc=>22, :fs=>3, :ts=>0, :ids=>"⿸鹿魚", :similar=>" Similar: 𪋠/ 𪋥/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT05020", :glyph=>"USAT05020.bmp", :rad=>23, :sc=>9, :fs=>4, :ts=>0, :ids=>"⿷匸冷", :similar=>" Similar: 𠥴/   Similar but semantically different: 匼/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT05021", :glyph=>"USAT05021.bmp", :rad=>23, :sc=>12, :fs=>4, :ts=>0, :ids=>"⿷匚浛", :similar=>" Similar: 浛/ 𠥴/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT05024", :glyph=>"USAT05024.bmp", :rad=>60, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿰彳𠂢", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05028", :glyph=>"USAT05028.bmp", :rad=>94, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿰犭畐", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT05030", :glyph=>"USAT05030.bmp", :rad=>69, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿰皀斤", :similar=>" Similar but semantically different: 𣂢/  ", :evidence=>"IRGN2230SATWS2017Evidences1.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT05038", :glyph=>"USAT05038.bmp", :rad=>142, :sc=>15, :fs=>4, :ts=>0, :ids=>"⿰虫音", :similar=>" Similar: 䗈/   Similar but semantically different: 𬠗/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT05047", :glyph=>"USAT05047.bmp", :rad=>9, :sc=>6, :fs=>4, :ts=>0, :ids=>"⿰亻⿱丄丅", :similar=>" Similar but semantically different: 佧/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT05054", :glyph=>"USAT05054.bmp", :rad=>104, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿸疒何", :similar=>" Similar: 痾/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT05056", :glyph=>"USAT05056.bmp", :rad=>118, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿱竹⿷匚从", :similar=>" Similar: 篋/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05061", :glyph=>"USAT05061.bmp", :rad=>190, :sc=>17, :fs=>2, :ts=>0, :ids=>"⿱髟別", :similar=>" Similar: 𩮜/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT05070", :glyph=>"USAT05070.bmp", :rad=>86, :sc=>14, :fs=>1, :ts=>0, :ids=>"⿰⿳大一丁炎", :similar=>" Similar: 燅/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT05076", :glyph=>"USAT05076.bmp", :rad=>75, :sc=>10, :fs=>1, :ts=>0, :ids=>"⿰木权", :similar=>" Similar: 椒/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05096", :glyph=>"USAT05096.bmp", :rad=>55, :sc=>19, :fs=>3, :ts=>0, :ids=>"⿳分⿰米糸廾", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT05098", :glyph=>"USAT05098.bmp", :rad=>169, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿵門⿱一口", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT05102", :glyph=>"USAT05102.bmp", :rad=>115, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿰禾斥", :similar=>" Similar: 枅/   Similar but semantically different: 柝/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT05106", :glyph=>"USAT05106.bmp", :rad=>77, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿰止⿱个又", :similar=>" Similar: 歧/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT05117", :glyph=>"USAT05117.bmp", :rad=>198, :sc=>15, :fs=>4, :ts=>0, :ids=>"⿸鹿火", :similar=>" Similar: 麃/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT05133", :glyph=>"USAT05133.bmp", :rad=>55, :sc=>15, :fs=>4, :ts=>0, :ids=>"⿱馮廾", :similar=>" Similar: 𠗦/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT05140", :glyph=>"USAT05140.bmp", :rad=>140, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿱艹⿰丨臣", :similar=>" Similar: 茝/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT05171", :glyph=>"USAT05171.bmp", :rad=>115, :sc=>12, :fs=>4, :ts=>0, :ids=>"⿰禾㐬", :similar=>" Similar: 梳/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT05201", :glyph=>"USAT05201.bmp", :rad=>32, :sc=>16, :fs=>4, :ts=>0, :ids=>"⿱⿰氵害土", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT05202", :glyph=>"USAT05202.bmp", :rad=>99, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿱合甘", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05209", :glyph=>"USAT05209.bmp", :rad=>116, :sc=>14, :fs=>5, :ts=>0, :ids=>"⿱穴⿰阝圭", :similar=>" Similar: 窪/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT05217", :glyph=>"USAT05217.bmp", :rad=>86, :sc=>10, :fs=>4, :ts=>0, :ids=>"⿰火充", :similar=>" Similar but semantically different: 𪸗/ 𬊵/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05221", :glyph=>"USAT05221.bmp", :rad=>94, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿰犭⿱⿲人丨人兀", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT05415", :glyph=>"USAT05415.bmp", :rad=>116, :sc=>15, :fs=>3, :ts=>0, :ids=>"⿱穴倶", :similar=>" Similar: 2D501/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT05511", :glyph=>"USAT05511.bmp", :rad=>30, :sc=>17, :fs=>3, :ts=>0, :ids=>"⿰口⿱利⿱𠆢氺", :similar=>" Similar: 2D2B5/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT05571", :glyph=>"USAT05571.bmp", :rad=>137, :sc=>9, :fs=>5, :ts=>0, :ids=>"⿰舟巳", :similar=>" Similar: 郍/   Similar but semantically different: 𦨌/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT05574", :glyph=>"USAT05574.bmp", :rad=>85, :sc=>19, :fs=>2, :ts=>0, :ids=>"⿰氵⿳日出⿱大丰", :similar=>" Similar: 𤄗/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT05575", :glyph=>"USAT05575.bmp", :rad=>75, :sc=>16, :fs=>1, :ts=>0, :ids=>"⿱⿰牙攵束", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT05577", :glyph=>"USAT05577.bmp", :rad=>120, :sc=>21, :fs=>1, :ts=>0, :ids=>"⿲糸𨊥糸", :similar=>" Similar: USAT05679/ 𦆕/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT05587", :glyph=>"USAT05587.bmp", :rad=>116, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿱穴⿰井又", :similar=>" Similar: 𠭗/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05593", :glyph=>"USAT05593.bmp", :rad=>85, :sc=>18, :fs=>3, :ts=>0, :ids=>"⿰氵⿰彳菐", :similar=>" Similar: 濮/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT05599", :glyph=>"USAT05599.bmp", :rad=>61, :sc=>10, :fs=>5, :ts=>0, :ids=>"⿱奸心", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05600", :glyph=>"USAT05600.bmp", :rad=>142, :sc=>18, :fs=>3, :ts=>0, :ids=>"⿰⿱臼虫虫", :similar=>" Non-similar and synonymous: 鼬/   Similar but semantically different: 𪕕/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT05603", :glyph=>"USAT05603.bmp", :rad=>130, :sc=>4, :fs=>3, :ts=>0, :ids=>"⿻𠂊⿱丶丶", :similar=>" Similar but semantically different: 夕/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>0, :comment=>nil}
+{:id=>"USAT05606", :glyph=>"USAT05606.bmp", :rad=>61, :sc=>15, :fs=>2, :ts=>0, :ids=>"⿰忄歮", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT05619", :glyph=>"USAT05619.bmp", :rad=>49, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿲丿臣巳", :similar=>" Similar: 巸/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT05620", :glyph=>"USAT05620.bmp", :rad=>157, :sc=>20, :fs=>1, :ts=>0, :ids=>"⿰𧾷⿸厂黒", :similar=>" Similar: 𨂷/ 𨇠/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT05622", :glyph=>"USAT05622.bmp", :rad=>131, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿰丿臣", :similar=>" Similar: 𦣝/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>1, :comment=>nil}
+{:id=>"USAT05627", :glyph=>"USAT05627.bmp", :rad=>164, :sc=>13, :fs=>5, :ts=>0, :ids=>"⿰酉⿱彐彐", :similar=>" Similar: 𩰸/ 𩱂/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05632", :glyph=>"USAT05632.bmp", :rad=>112, :sc=>21, :fs=>1, :ts=>0, :ids=>"⿰石曆", :similar=>" Similar: 礰/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT05638", :glyph=>"USAT05638.bmp", :rad=>142, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿱亾虫", :similar=>" Similar: 𧌦/ 䖟/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT05640", :glyph=>"USAT05640.bmp", :rad=>123, :sc=>19, :fs=>3, :ts=>0, :ids=>"⿱⿱亾口⿲月羊凡", :similar=>" Similar: 羸/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT05641", :glyph=>"USAT05641.bmp", :rad=>104, :sc=>20, :fs=>5, :ts=>0, :ids=>"⿸疒䗍", :similar=>" Similar: 𤼠/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT05650", :glyph=>"USAT05650.bmp", :rad=>55, :sc=>8, :fs=>1, :ts=>0, :ids=>"⿱𡗗廾", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT05655", :glyph=>"USAT05655.bmp", :rad=>109, :sc=>11, :fs=>4, :ts=>0, :ids=>"⿰目⿱丶平", :similar=>" Similar: 睟/   Similar but semantically different: 𬑈/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT05658", :glyph=>"USAT05658.bmp", :rad=>32, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿰土替", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT05676", :glyph=>"USAT05676.bmp", :rad=>122, :sc=>12, :fs=>4, :ts=>0, :ids=>"⿱𠔿卷", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT05677", :glyph=>"USAT05677.bmp", :rad=>100, :sc=>12, :fs=>2, :ts=>0, :ids=>"⿲生田力", :similar=>" Similar: 甥/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT05688", :glyph=>"USAT05688.bmp", :rad=>1, :sc=>17, :fs=>1, :ts=>0, :ids=>"⿰壹丕", :similar=>" Similar: 噽/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT05844", :glyph=>"USAT05844.bmp", :rad=>41, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿱白寸", :similar=>" Similar: 𦥘/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT05849", :glyph=>"USAT05849.bmp", :rad=>9, :sc=>15, :fs=>2, :ts=>0, :ids=>"⿰亻⿰⿱出方攵", :similar=>" Similar: 傲/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT05856", :glyph=>"USAT05856.bmp", :rad=>40, :sc=>16, :fs=>1, :ts=>0, :ids=>"⿱宀𤊽", :similar=>" Similar: 𥨤/ 寮/  ", :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT05857", :glyph=>"USAT05857.bmp", :rad=>13, :sc=>6, :fs=>5, :ts=>0, :ids=>"⿵冂⿱厶又", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences2.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT05858", :glyph=>"USAT05858.bmp", :rad=>41, :sc=>15, :fs=>3, :ts=>0, :ids=>"⿰𤔔寸", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT05866", :glyph=>"USAT05866.bmp", :rad=>66, :sc=>11, :fs=>2, :ts=>0, :ids=>"⿰⿱？几攵", :similar=>" Similar: 𣁋/ 𢼸/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT05872", :glyph=>"USAT05872.bmp", :rad=>78, :sc=>9, :fs=>2, :ts=>0, :ids=>"⿰⿱⺊⿵冂丶攴", :similar=>" Similar: 𣦼/ 𣦻/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT05999", :glyph=>"USAT05999.bmp", :rad=>30, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿰口⿱三皿", :similar=>" Similar: 嗌/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06009", :glyph=>"USAT06009.bmp", :rad=>75, :sc=>14, :fs=>4, :ts=>0, :ids=>"⿱来来", :similar=>" Similar: 𠐇/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06026", :glyph=>"USAT06026.bmp", :rad=>157, :sc=>15, :fs=>2, :ts=>0, :ids=>"⿰𧾷⿱日月", :similar=>" Similar: 踢/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06036", :glyph=>"USAT06036.bmp", :rad=>85, :sc=>19, :fs=>1, :ts=>0, :ids=>"⿰氵⿰苟苟", :similar=>" Similar: 𤀂/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT06037", :glyph=>"USAT06037.bmp", :rad=>166, :sc=>14, :fs=>2, :ts=>0, :ids=>"⿰里坒", :similar=>" Similar: 䯗/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06042", :glyph=>"USAT06042.bmp", :rad=>75, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿱⿰㐄㐄木", :similar=>" Similar: 桀/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06046", :glyph=>"USAT06046.bmp", :rad=>86, :sc=>13, :fs=>5, :ts=>0, :ids=>"⿱⿳⿻彐丨一灬火", :similar=>" Similar: 㶳/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT06051", :glyph=>"USAT06051.bmp", :rad=>46, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿱山玫", :similar=>" Similar: 𢽃/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06052", :glyph=>"USAT06052.bmp", :rad=>122, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿱罒⿰糸匕", :similar=>" Similar: 𦁒/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06059", :glyph=>"USAT06059.bmp", :rad=>42, :sc=>14, :fs=>4, :ts=>0, :ids=>"⿱渚小", :similar=>" Similar: 㵭/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06062", :glyph=>"USAT06062.bmp", :rad=>140, :sc=>14, :fs=>3, :ts=>0, :ids=>"⿳艹⿳一八人目", :similar=>" Similar: 睿/ 𣥸/ 𣦒/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06094", :glyph=>"USAT06094.bmp", :rad=>115, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿰禾亾", :similar=>" Similar: 𥝕/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT06095", :glyph=>"USAT06095.bmp", :rad=>167, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿰金⿺𠃊人", :similar=>" Similar: 釯/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT06097", :glyph=>"USAT06097.bmp", :rad=>10, :sc=>9, :fs=>2, :ts=>0, :ids=>"⿱⿲口｜人兀", :similar=>" Similar: 𠒃/ 𠒊/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06107", :glyph=>"USAT06107.bmp", :rad=>75, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿰木⿱𠂉丮", :similar=>" Similar: 𣒰/   Similar but semantically different: 𣒻/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06113", :glyph=>"USAT06113.bmp", :rad=>164, :sc=>17, :fs=>3, :ts=>0, :ids=>"⿰酉⿱片皿", :similar=>" Similar: 䤈/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT06116", :glyph=>"USAT06116.bmp", :rad=>86, :sc=>10, :fs=>1, :ts=>0, :ids=>"⿳大火土", :similar=>" Similar: 烾/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06117", :glyph=>"USAT06117.bmp", :rad=>211, :sc=>26, :fs=>2, :ts=>0, :ids=>"⿰⿱虍且齒", :similar=>" Similar: 䶥/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06135", :glyph=>"USAT06135.bmp", :rad=>122, :sc=>13, :fs=>4, :ts=>0, :ids=>"⿱罒宜", :similar=>" Similar: 𦋾/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06140", :glyph=>"USAT06140.bmp", :rad=>9, :sc=>9, :fs=>1, :ts=>0, :ids=>"⿰亻⿳一申一", :similar=>" Similar: 匣/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06146", :glyph=>"USAT06146.bmp", :rad=>140, :sc=>9, :fs=>5, :ts=>0, :ids=>"⿱芀⿳一刀一", :similar=>" Similar: 𦱪/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06183", :glyph=>"USAT06183.bmp", :rad=>61, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿳十目心", :similar=>" Similar: 惪/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06208", :glyph=>"USAT06208.bmp", :rad=>30, :sc=>15, :fs=>2, :ts=>0, :ids=>"⿳吅𠀎𧘇", :similar=>" Similar: 𤕦/ 襄/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT06242", :glyph=>"USAT06242.bmp", :rad=>61, :sc=>14, :fs=>1, :ts=>0, :ids=>"⿰忄⿳艹夂用", :similar=>" Similar: 𢞎/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06247", :glyph=>"USAT06247.bmp", :rad=>196, :sc=>20, :fs=>3, :ts=>0, :ids=>"⿰⿱生円鳥", :similar=>" Similar: 鶄/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT06248", :glyph=>"USAT06248.bmp", :rad=>149, :sc=>21, :fs=>1, :ts=>0, :ids=>"⿰言⿰𠦝舟", :similar=>" Similar: 謿/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT06260", :glyph=>"USAT06260.bmp", :rad=>113, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿰示走", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06262", :glyph=>"USAT06262.bmp", :rad=>120, :sc=>24, :fs=>1, :ts=>0, :ids=>"⿰糸⿰⿱林肉攴", :similar=>" Similar: 𦇕/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>18, :comment=>nil}
+{:id=>"USAT06267", :glyph=>"USAT06267.bmp", :rad=>122, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿱𦉪不", :similar=>" Similar: 罘/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT06344", :glyph=>"USAT06344.bmp", :rad=>64, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿱殻手", :similar=>" Similar: 𤛓/ 撀/ 㨌/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06362", :glyph=>"USAT06362.bmp", :rad=>14, :sc=>10, :fs=>1, :ts=>0, :ids=>"⿱冖⿺元殳", :similar=>" Similar: 冦/ 㓂/ 宼/ 𡨥/ 𪞒/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06368", :glyph=>"USAT06368.bmp", :rad=>156, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿺走⿱口⿲丿丨乚", :similar=>" Similar: 𨓲/   Similar but semantically different: 趗/ 𧻍/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06372", :glyph=>"USAT06372.bmp", :rad=>90, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿰爿生", :similar=>" Similar: 牲/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT06382", :glyph=>"USAT06382.bmp", :rad=>61, :sc=>17, :fs=>4, :ts=>0, :ids=>"⿰忄⿸广⿱回禾", :similar=>" Similar: 𢤭/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT06384", :glyph=>"USAT06384.bmp", :rad=>119, :sc=>20, :fs=>4, :ts=>0, :ids=>"⿰米𢊪", :similar=>" Similar: 糠/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT06422", :glyph=>"USAT06422.bmp", :rad=>60, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿰彳戾", :similar=>" Similar: 㑦/ 淚/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06424", :glyph=>"USAT06424.bmp", :rad=>140, :sc=>13, :fs=>4, :ts=>0, :ids=>"⿱艹旅", :similar=>" Similar: 𥰠/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT06428", :glyph=>"USAT06428.bmp", :rad=>141, :sc=>15, :fs=>2, :ts=>0, :ids=>"⿰号⿸厂虎", :similar=>" Similar: 號/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT06430", :glyph=>"USAT06430.bmp", :rad=>85, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿰氵⿱止⿱⿱八𠆢目", :similar=>" Similar: 濬/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT06434", :glyph=>"USAT06434.bmp", :rad=>173, :sc=>22, :fs=>3, :ts=>0, :ids=>"⿱雨䧻", :similar=>" Similar: 靃/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT06446", :glyph=>"USAT06446.bmp", :rad=>64, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿰扌⿱从开", :similar=>" Similar: 拼/ 拚/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06450", :glyph=>"USAT06450.bmp", :rad=>10, :sc=>9, :fs=>1, :ts=>0, :ids=>"⿺元皮", :similar=>" Similar: 㝿/ 𤿑/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06456", :glyph=>"USAT06456.bmp", :rad=>75, :sc=>16, :fs=>1, :ts=>0, :ids=>"⿰木葛", :similar=>" Similar: 擖/ 獦/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT06472", :glyph=>"USAT06472.bmp", :rad=>61, :sc=>16, :fs=>1, :ts=>0, :ids=>"⿰忄賈", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT06473", :glyph=>"USAT06473.bmp", :rad=>21, :sc=>8, :fs=>5, :ts=>0, :ids=>"⿰匕⿱巛山", :similar=>" Similar: 匘/ 𡍗/ 堖/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06474", :glyph=>"USAT06474.bmp", :rad=>181, :sc=>15, :fs=>4, :ts=>0, :ids=>"⿰宅頁", :similar=>" Similar: 𩑒/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06493", :glyph=>"USAT06493.bmp", :rad=>9, :sc=>10, :fs=>2, :ts=>0, :ids=>"⿱此从", :similar=>" Similar: 啙/  ", :evidence=>"IRGN2230SATWS2017Evidences3.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06502", :glyph=>"USAT06502.bmp", :rad=>18, :sc=>8, :fs=>1, :ts=>0, :ids=>"⿰⿱二从刂", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06516", :glyph=>"USAT06516.bmp", :rad=>194, :sc=>18, :fs=>2, :ts=>0, :ids=>"⿰罔鬼", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06519", :glyph=>"USAT06519.bmp", :rad=>9, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿰亻⿱千目", :similar=>" Similar: 偱/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06521", :glyph=>"USAT06521.bmp", :rad=>118, :sc=>17, :fs=>3, :ts=>0, :ids=>"⿱竹⿰氵畀", :similar=>" Similar: 𥱼/ 𤀥/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06593", :glyph=>"USAT06593.bmp", :rad=>109, :sc=>9, :fs=>1, :ts=>0, :ids=>"⿱夫目", :similar=>" Similar: 脊/ 2D983/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT06600", :glyph=>"USAT06600.bmp", :rad=>30, :sc=>10, :fs=>1, :ts=>0, :ids=>"⿰口𡗢", :similar=>" Similar but semantically different: 𠲓/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06603", :glyph=>"USAT06603.bmp", :rad=>37, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿰𠦝𡗢", :similar=>" Similar: 𩩃/ 幹/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT06605", :glyph=>"USAT06605.bmp", :rad=>148, :sc=>14, :fs=>2, :ts=>0, :ids=>"⿱此𧢲", :similar=>" Similar: 觜/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06606", :glyph=>"USAT06606.bmp", :rad=>50, :sc=>15, :fs=>2, :ts=>0, :ids=>"⿱此帝", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT06611", :glyph=>"USAT06611.bmp", :rad=>85, :sc=>10, :fs=>4, :ts=>0, :ids=>"⿰氵⿱宀止", :similar=>" Similar: 沱/   Similar but semantically different: 淀/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06618", :glyph=>"USAT06618.bmp", :rad=>39, :sc=>7, :fs=>1, :ts=>0, :ids=>"⿱太子", :similar=>" Similar: 李/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT06620", :glyph=>"USAT06620.bmp", :rad=>46, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿱山𤋱", :similar=>" Similar: 薫/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT06633", :glyph=>"USAT06633.bmp", :rad=>75, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿱啓木", :similar=>" Similar: 𣘼/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06643", :glyph=>"USAT06643.bmp", :rad=>140, :sc=>6, :fs=>1, :ts=>0, :ids=>"⿱艹⿷匚一", :similar=>" Similar: 芒/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT06644", :glyph=>"USAT06644.bmp", :rad=>64, :sc=>9, :fs=>2, :ts=>0, :ids=>"⿰扌⿱口土", :similar=>" Similar: 捏/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06659", :glyph=>"USAT06659.bmp", :rad=>170, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿰阝桒", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT06670", :glyph=>"USAT06670.bmp", :rad=>4, :sc=>7, :fs=>3, :ts=>0, :ids=>"⿻千⿱卄一", :similar=>" Similar: 𠂯/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06696", :glyph=>"USAT06696.bmp", :rad=>151, :sc=>18, :fs=>1, :ts=>0, :ids=>"⿱殸豆", :similar=>" Non-similar and synonymous: 㱅/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06704", :glyph=>"USAT06704.bmp", :rad=>79, :sc=>17, :fs=>1, :ts=>0, :ids=>"⿱𣪊卵", :similar=>" Similar: 㲉/ 𣫘/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT06705", :glyph=>"USAT06705.bmp", :rad=>61, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿰忄冡", :similar=>" Similar: 懞/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT06713", :glyph=>"USAT06713.bmp", :rad=>102, :sc=>9, :fs=>2, :ts=>0, :ids=>"⿰田攴", :similar=>" Similar: 畋/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT06725", :glyph=>"USAT06725.bmp", :rad=>86, :sc=>14, :fs=>1, :ts=>0, :ids=>"⿰坴⿱夕火", :similar=>" Similar: 𤏝/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06726", :glyph=>"USAT06726.bmp", :rad=>86, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿰火⿱千火", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06731", :glyph=>"USAT06731.bmp", :rad=>120, :sc=>17, :fs=>1, :ts=>0, :ids=>"⿰糸⿱大奇", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06741", :glyph=>"USAT06741.bmp", :rad=>94, :sc=>11, :fs=>5, :ts=>0, :ids=>"⿰犭𧈧", :similar=>" Similar: 𪻅/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06742", :glyph=>"USAT06742.bmp", :rad=>185, :sc=>18, :fs=>2, :ts=>0, :ids=>"⿺是首", :similar=>" Similar: 題/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT06743", :glyph=>"USAT06743.bmp", :rad=>64, :sc=>7, :fs=>1, :ts=>0, :ids=>"⿰扌开", :similar=>" Similar: 枅/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT06761", :glyph=>"USAT06761.bmp", :rad=>120, :sc=>14, :fs=>3, :ts=>0, :ids=>"⿰糸⿱从开", :similar=>" Similar: 絣/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06767", :glyph=>"USAT06767.bmp", :rad=>195, :sc=>22, :fs=>3, :ts=>0, :ids=>"⿰魚悤", :similar=>" Similar: 鰓/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06773", :glyph=>"USAT06773.bmp", :rad=>93, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿱⿰未攴⿸厂牛", :similar=>" Similar: 犛/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06786", :glyph=>"USAT06786.bmp", :rad=>85, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿰氵⿱止刖", :similar=>" Similar: 𣾅/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT06811", :glyph=>"USAT06811.bmp", :rad=>8, :sc=>10, :fs=>5, :ts=>0, :ids=>"⿳𠫓丗丄", :similar=>" Similar: 𡊄/ 𡊅/ 𡍊/   Similar but semantically different: 棄/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06813", :glyph=>"USAT06813.bmp", :rad=>86, :sc=>15, :fs=>2, :ts=>0, :ids=>"⿰火問", :similar=>" Similar: 燗/ 𤏐/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06823", :glyph=>"USAT06823.bmp", :rad=>44, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿸尸⿰彳禾", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06826", :glyph=>"USAT06826.bmp", :rad=>82, :sc=>17, :fs=>2, :ts=>0, :ids=>"⿰睪毛", :similar=>" Similar: 𣯉/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT06846", :glyph=>"USAT06846.bmp", :rad=>75, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿰木麦", :similar=>" Similar: 棱/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT06847", :glyph=>"USAT06847.bmp", :rad=>118, :sc=>24, :fs=>3, :ts=>0, :ids=>"⿱竹⿰舟⿱龹糸", :similar=>" Similar: 籘/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>18, :comment=>nil}
+{:id=>"USAT06880", :glyph=>"USAT06880.bmp", :rad=>74, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿰令月", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT06902", :glyph=>"USAT06902.bmp", :rad=>130, :sc=>16, :fs=>4, :ts=>0, :ids=>"⿱高肉", :similar=>" Similar: 膏/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT06905", :glyph=>"USAT06905.bmp", :rad=>86, :sc=>18, :fs=>1, :ts=>0, :ids=>"⿲火票寸", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT06918", :glyph=>"USAT06918.bmp", :rad=>170, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿰阝白", :similar=>" Similar: 阼/   Similar but semantically different: 阳/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT06931", :glyph=>"USAT06931.bmp", :rad=>120, :sc=>8, :fs=>5, :ts=>0, :ids=>"⿰糸𠄏", :similar=>" Similar: 𢆴/ 𥾇/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>2, :comment=>nil}
+{:id=>"USAT06935", :glyph=>"USAT06935.bmp", :rad=>64, :sc=>15, :fs=>4, :ts=>0, :ids=>"⿰扌普", :similar=>" Similar but semantically different: 𣚴/ 𡐭/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT06938", :glyph=>"USAT06938.bmp", :rad=>154, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿱吅貝", :similar=>" Similar: 𠽸/   Similar but semantically different: 買/ 員/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06943", :glyph=>"USAT06943.bmp", :rad=>53, :sc=>19, :fs=>3, :ts=>0, :ids=>"⿸广⿱⿰亻隹肉", :similar=>" Similar: 膺/ 𦢻/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT06957", :glyph=>"USAT06957.bmp", :rad=>146, :sc=>16, :fs=>4, :ts=>0, :ids=>"⿱覀朔", :similar=>" Similar: 𧟶/ 𧟳/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT06971", :glyph=>"USAT06971.bmp", :rad=>17, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿰出屈", :similar=>" Similar: 堀/ 崛/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT06975", :glyph=>"USAT06975.bmp", :rad=>39, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿳⿻十从冖子", :similar=>" Similar: 𡥏/ 孛/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT06978", :glyph=>"USAT06978.bmp", :rad=>61, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿳必冖⿻匚一", :similar=>" Similar: 𢗺/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT06982", :glyph=>"USAT06982.bmp", :rad=>72, :sc=>20, :fs=>3, :ts=>0, :ids=>"⿱𧎪日", :similar=>" Similar: 𧓢/  ", :evidence=>"IRGN2230SATWS2017Evidences4.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT06995", :glyph=>"USAT06995.bmp", :rad=>75, :sc=>31, :fs=>3, :ts=>0, :ids=>"⿰木⿱⿴𦥑同⿳冖林灬", :similar=>" Similar: 𣡿/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>27, :comment=>nil}
+{:id=>"USAT07003", :glyph=>"USAT07003.bmp", :rad=>142, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿰虫⿱个又", :similar=>" Similar: 蚑/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT07018", :glyph=>"USAT07018.bmp", :rad=>130, :sc=>18, :fs=>2, :ts=>0, :ids=>"⿰肉⿱吅屰", :similar=>" Similar: 𦠍/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT07019", :glyph=>"USAT07019.bmp", :rad=>85, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿰氵⿱生円", :similar=>" Similar: 清/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT07042", :glyph=>"USAT07042.bmp", :rad=>128, :sc=>15, :fs=>5, :ts=>0, :ids=>"⿰耳⿱𣫬心", :similar=>" Similar: 聰/ 聦/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT07064", :glyph=>"USAT07064.bmp", :rad=>31, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿴囗𠂭", :similar=>" Similar: 𡇒/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT07069", :glyph=>"USAT07069.bmp", :rad=>109, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿱亾目", :similar=>" Similar: 盲/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT07071", :glyph=>"USAT07071.bmp", :rad=>66, :sc=>15, :fs=>4, :ts=>0, :ids=>"⿰啇攴", :similar=>" Similar: 敵/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT07081", :glyph=>"USAT07081.bmp", :rad=>79, :sc=>21, :fs=>1, :ts=>0, :ids=>"⿰雚殳", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>17, :comment=>nil}
+{:id=>"USAT07103", :glyph=>"USAT07103.bmp", :rad=>78, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿰⿱止夕丂", :similar=>" Similar: 㱙/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT07108", :glyph=>"USAT07108.bmp", :rad=>162, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿺辶⿱从开", :similar=>" Similar: 逬/ 迸/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT07173", :glyph=>"USAT07173.bmp", :rad=>29, :sc=>11, :fs=>2, :ts=>0, :ids=>"⿱⿰⿳⺊冖一又井", :similar=>" Similar: 𠭘/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT07176", :glyph=>"USAT07176.bmp", :rad=>79, :sc=>9, :fs=>1, :ts=>0, :ids=>"⿰⿱士几殳", :similar=>" Similar: 殼/ 𣪊/ 㱿/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT07177", :glyph=>"USAT07177.bmp", :rad=>140, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿱艹㣞", :similar=>" Similar: 𦲮/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT07188", :glyph=>"USAT07188.bmp", :rad=>120, :sc=>18, :fs=>3, :ts=>0, :ids=>"⿰糸筍", :similar=>" Similar: 𦃜/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT07189", :glyph=>"USAT07189.bmp", :rad=>58, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿱彐𪤷", :similar=>" Similar: 㣇/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT07192", :glyph=>"USAT07192.bmp", :rad=>61, :sc=>15, :fs=>3, :ts=>0, :ids=>"⿰忄斐", :similar=>" Similar but semantically different: 𢡅/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT07197", :glyph=>"USAT07197.bmp", :rad=>75, :sc=>14, :fs=>3, :ts=>0, :ids=>"⿰木倚", :similar=>" Similar: 椅/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT07201", :glyph=>"USAT07201.bmp", :rad=>102, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿰田尒", :similar=>" Similar: 𤱏/ 畛/   Similar but semantically different: 畭/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT07205", :glyph=>"USAT07205.bmp", :rad=>13, :sc=>5, :fs=>2, :ts=>0, :ids=>"⿻冂⿱丨又", :similar=>" Similar: 肉/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT07210", :glyph=>"USAT07210.bmp", :rad=>32, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿱𠦬一", :similar=>" Similar: 𡍮/ 𠂹/ 𠃀/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT07222", :glyph=>"USAT07222.bmp", :rad=>142, :sc=>29, :fs=>2, :ts=>0, :ids=>"⿱蟲鳥", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>23, :comment=>nil}
+{:id=>"USAT07224", :glyph=>"USAT07224.bmp", :rad=>46, :sc=>14, :fs=>3, :ts=>0, :ids=>"⿰山魚", :similar=>" Similar: 嶮/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT07230", :glyph=>"USAT07230.bmp", :rad=>32, :sc=>7, :fs=>3, :ts=>0, :ids=>"⿰土夭", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT07231", :glyph=>"USAT07231.bmp", :rad=>122, :sc=>19, :fs=>2, :ts=>0, :ids=>"⿱网⿰中馬", :similar=>" Similar: 𦌯/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT07232", :glyph=>"USAT07232.bmp", :rad=>169, :sc=>16, :fs=>1, :ts=>0, :ids=>"⿵門所", :similar=>" Similar: 𩰖/ 𨷖/ 鬭/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT07236", :glyph=>"USAT07236.bmp", :rad=>61, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿰忄⿰⿱出方攵", :similar=>" Similar: 慠/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT07270", :glyph=>"USAT07270.bmp", :rad=>30, :sc=>6, :fs=>5, :ts=>0, :ids=>"⿱口屮", :similar=>" Similar but semantically different: 𠯃/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT08164", :glyph=>"USAT08164.bmp", :rad=>75, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿰木⿻冂⿱丨又", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT08262", :glyph=>"USAT08262.bmp", :rad=>173, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿱雨果", :similar=>" Similar: 窠/ 窼/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08268", :glyph=>"USAT08268.bmp", :rad=>145, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿱牙衣", :similar=>" Similar: 衺/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT08271", :glyph=>"USAT08271.bmp", :rad=>148, :sc=>23, :fs=>1, :ts=>0, :ids=>"⿱⿰或或角", :similar=>" Similar: 𧥑/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>16, :comment=>nil}
+{:id=>"USAT08277", :glyph=>"USAT08277.bmp", :rad=>190, :sc=>22, :fs=>4, :ts=>0, :ids=>"⿱髟湏", :similar=>" Similar: 鬚/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT08280", :glyph=>"USAT08280.bmp", :rad=>50, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿰巾⿱覀⿱二火", :similar=>" Similar: 幖/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT08289", :glyph=>"USAT08289.bmp", :rad=>125, :sc=>10, :fs=>5, :ts=>0, :ids=>"⿱老巴", :similar=>" Similar: 𨚻/ 𦒿/ 耆/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT08302", :glyph=>"USAT08302.bmp", :rad=>158, :sc=>20, :fs=>4, :ts=>0, :ids=>"⿰身義", :similar=>" Similar: 艤/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT08326", :glyph=>"USAT08326.bmp", :rad=>87, :sc=>11, :fs=>4, :ts=>0, :ids=>"⿰⿱文巾爪", :similar=>" Similar: 𤔟/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT08327", :glyph=>"USAT08327.bmp", :rad=>157, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿰足尤", :similar=>" Similar: 𧿒/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT08332", :glyph=>"USAT08332.bmp", :rad=>82, :sc=>15, :fs=>3, :ts=>0, :ids=>"⿰鹿毛", :similar=>" Similar: 㲥/   Similar but semantically different: 𪵡/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT08335", :glyph=>"USAT08335.bmp", :rad=>112, :sc=>26, :fs=>5, :ts=>0, :ids=>"⿰石屬", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>21, :comment=>nil}
+{:id=>"USAT08336", :glyph=>"USAT08336.bmp", :rad=>108, :sc=>16, :fs=>1, :ts=>0, :ids=>"⿱赦皿", :similar=>" Similar: 螫/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT08366", :glyph=>"USAT08366.bmp", :rad=>181, :sc=>17, :fs=>3, :ts=>0, :ids=>"⿰兒頁", :similar=>" Similar: 𧡎/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08368", :glyph=>"USAT08368.bmp", :rad=>137, :sc=>14, :fs=>5, :ts=>0, :ids=>"⿰舟叕", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08373", :glyph=>"USAT08373.bmp", :rad=>195, :sc=>18, :fs=>1, :ts=>0, :ids=>"⿰⿱土魚攵", :similar=>" Similar: 䱷/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT08374", :glyph=>"USAT08374.bmp", :rad=>75, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿰木⿱⿳屮一八夂", :similar=>" Similar: 棱/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT08385", :glyph=>"USAT08385.bmp", :rad=>61, :sc=>5, :fs=>5, :ts=>0, :ids=>"⿰忄又", :similar=>" Similar: 𠬧/   Similar but semantically different: 㣾/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>2, :comment=>nil}
+{:id=>"USAT08389", :glyph=>"USAT08389.bmp", :rad=>53, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿸广盇", :similar=>" Similar but semantically different: 𤸙/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT08407", :glyph=>"USAT08407.bmp", :rad=>119, :sc=>20, :fs=>1, :ts=>0, :ids=>"⿰米⿱覀卑", :similar=>" Similar: 䊤/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT08413", :glyph=>"USAT08413.bmp", :rad=>167, :sc=>20, :fs=>2, :ts=>0, :ids=>"⿰金㖾", :similar=>" Similar: 𨫘/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT08424", :glyph=>"USAT08424.bmp", :rad=>64, :sc=>9, :fs=>1, :ts=>0, :ids=>"⿰扌尥", :similar=>" Similar: 抛/  ", :evidence=>"IRGN2230SATWS2017Evidences5.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08441", :glyph=>"USAT08441.bmp", :rad=>30, :sc=>8, :fs=>3, :ts=>0, :ids=>"⿰口⿱乊𠀁", :similar=>" Similar: 𠰗/ 呼/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT08442", :glyph=>"USAT08442.bmp", :rad=>85, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿰⿱士示⿱又氺", :similar=>" Similar: 𣜩/ 𥻳/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT08443", :glyph=>"USAT08443.bmp", :rad=>74, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿰月⿱𠂉日", :similar=>" Similar: \u{2E316}/ 脂/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08453", :glyph=>"USAT08453.bmp", :rad=>50, :sc=>10, :fs=>2, :ts=>0, :ids=>"⿱此帀", :similar=>" Similar: 㭰/   Similar but semantically different: 㠿/ 𢃌/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT08458", :glyph=>"USAT08458.bmp", :rad=>118, :sc=>12, :fs=>2, :ts=>0, :ids=>"⿱竹吊", :similar=>" Similar: 笫/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08468", :glyph=>"USAT08468.bmp", :rad=>93, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿰牛丘", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT08502", :glyph=>"USAT08502.bmp", :rad=>75, :sc=>14, :fs=>3, :ts=>0, :ids=>"⿰杀易", :similar=>" Similar: 䵘/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT08505", :glyph=>"USAT08505.bmp", :rad=>119, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿱日⿱共米", :similar=>" Similar: 暴/ 𣊴/ 㬥/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT08506", :glyph=>"USAT08506.bmp", :rad=>145, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿰衤冐", :similar=>" Similar: 𧛕/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08517", :glyph=>"USAT08517.bmp", :rad=>61, :sc=>9, :fs=>3, :ts=>0, :ids=>"⿰忄⿱攵力", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08518", :glyph=>"USAT08518.bmp", :rad=>109, :sc=>16, :fs=>4, :ts=>0, :ids=>"⿰目眷", :similar=>" Similar: 睠/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT08519", :glyph=>"USAT08519.bmp", :rad=>147, :sc=>18, :fs=>4, :ts=>0, :ids=>"⿰⿱𠔉目見", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT08533", :glyph=>"USAT08533.bmp", :rad=>61, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿱⿻白⿰｜｜心", :similar=>" Similar: 𢙂/   Similar but semantically different: 𢘁/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT08563", :glyph=>"USAT08563.bmp", :rad=>142, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿰虫而", :similar=>" Similar: 𧑮/ 蝡/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08568", :glyph=>"USAT08568.bmp", :rad=>120, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿰糸囬", :similar=>" Similar but semantically different: 絗/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT08574", :glyph=>"USAT08574.bmp", :rad=>78, :sc=>7, :fs=>3, :ts=>0, :ids=>"⿱歹凡", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>3, :comment=>nil}
+{:id=>"USAT08588", :glyph=>"USAT08588.bmp", :rad=>75, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿰木⿱从开", :similar=>" Similar: 栟/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08624", :glyph=>"USAT08624.bmp", :rad=>38, :sc=>9, :fs=>4, :ts=>0, :ids=>"⿰女宇", :similar=>" Similar: 妤/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08626", :glyph=>"USAT08626.bmp", :rad=>187, :sc=>16, :fs=>5, :ts=>0, :ids=>"⿱馬糸", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08627", :glyph=>"USAT08627.bmp", :rad=>67, :sc=>30, :fs=>4, :ts=>0, :ids=>"⿳文⿱⿴𦥑同冖⿱酉灬", :similar=>" Similar: 斖/ 𠆠/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>26, :comment=>nil}
+{:id=>"USAT08633", :glyph=>"USAT08633.bmp", :rad=>109, :sc=>13, :fs=>2, :ts=>0, :ids=>"⿰目冐", :similar=>" Similar: 𥈆/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08652", :glyph=>"USAT08652.bmp", :rad=>194, :sc=>15, :fs=>3, :ts=>0, :ids=>"⿰鬼矢", :similar=>" Similar: 𩲶/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT08675", :glyph=>"USAT08675.bmp", :rad=>114, :sc=>20, :fs=>3, :ts=>0, :ids=>"⿱𠈌萬", :similar=>" Similar: 𦠪/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT08706", :glyph=>"USAT08706.bmp", :rad=>140, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿱艹⿸耂丑", :similar=>" Similar: 𦍮/ 𦍟/ 羞/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08708", :glyph=>"USAT08708.bmp", :rad=>85, :sc=>17, :fs=>1, :ts=>0, :ids=>"⿰氵⿱林肉", :similar=>" Similar: 潸/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT08716", :glyph=>"USAT08716.bmp", :rad=>30, :sc=>14, :fs=>2, :ts=>0, :ids=>"⿱𠶬廾", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT08730", :glyph=>"USAT08730.bmp", :rad=>181, :sc=>14, :fs=>3, :ts=>0, :ids=>"⿰包頁", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT08731", :glyph=>"USAT08731.bmp", :rad=>108, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿱⿰里尤皿", :similar=>" Similar but semantically different: 𥂏/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT08744", :glyph=>"USAT08744.bmp", :rad=>75, :sc=>12, :fs=>5, :ts=>0, :ids=>"⿰木阿", :similar=>" Similar: 𣒍/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08747", :glyph=>"USAT08747.bmp", :rad=>158, :sc=>15, :fs=>3, :ts=>0, :ids=>"⿰身隹", :similar=>" Similar: \u{2E733}/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08768", :glyph=>"USAT08768.bmp", :rad=>184, :sc=>15, :fs=>1, :ts=>0, :ids=>"⿱列食", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>6, :comment=>nil}
+{:id=>"USAT08772", :glyph=>"USAT08772.bmp", :rad=>86, :sc=>8, :fs=>5, :ts=>0, :ids=>"⿳刀刀灬", :similar=>" Similar: 𤈗/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT08774", :glyph=>"USAT08774.bmp", :rad=>85, :sc=>18, :fs=>3, :ts=>0, :ids=>"⿰氵䈟", :similar=>" Similar: 湔/ 𣾅/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT08805", :glyph=>"USAT08805.bmp", :rad=>104, :sc=>14, :fs=>4, :ts=>0, :ids=>"⿸疒⿱𠔉土", :similar=>" Similar: 瘞/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT08811", :glyph=>"USAT08811.bmp", :rad=>126, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿱？而", :similar=>" Similar: 耑/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT08852", :glyph=>"USAT08852.bmp", :rad=>113, :sc=>18, :fs=>2, :ts=>0, :ids=>"⿰祟⿱又米", :similar=>" Similar: 𥛬/ 𣜩/ 𨾀/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>13, :comment=>nil}
+{:id=>"USAT08856", :glyph=>"USAT08856.bmp", :rad=>103, :sc=>13, :fs=>1, :ts=>0, :ids=>"⿰𤴔昔", :similar=>" Similar: 踖/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT08875", :glyph=>"USAT08875.bmp", :rad=>129, :sc=>13, :fs=>1, :ts=>0, :ids=>"⿱⿰石又聿", :similar=>" Similar: 肇/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT08879", :glyph=>"USAT08879.bmp", :rad=>140, :sc=>17, :fs=>3, :ts=>0, :ids=>"⿱艹⿳⿻二中冖⿱口土", :similar=>" Similar: 𬞩/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT08897", :glyph=>"USAT08897.bmp", :rad=>109, :sc=>9, :fs=>2, :ts=>0, :ids=>"⿱⿱口Ｌ目", :similar=>" Similar: 𦙃/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT08910", :glyph=>"USAT08910.bmp", :rad=>60, :sc=>4, :fs=>4, :ts=>0, :ids=>"⿰彳丶", :similar=>" Non-similar and synonymous: 廴/   Similar but semantically different: 彳/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>1, :comment=>nil}
+{:id=>"USAT08927", :glyph=>"USAT08927.bmp", :rad=>61, :sc=>13, :fs=>3, :ts=>0, :ids=>"⿰忄⿱右冋", :similar=>" Similar: 憍/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT08952", :glyph=>"USAT08952.bmp", :rad=>64, :sc=>8, :fs=>2, :ts=>0, :ids=>"⿰扌叏", :similar=>" Similar: 抉/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>5, :comment=>nil}
+{:id=>"USAT08960", :glyph=>"USAT08960.bmp", :rad=>156, :sc=>18, :fs=>1, :ts=>0, :ids=>"⿺走欶", :similar=>" Similar: 趚/ 𧽓/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT08961", :glyph=>"USAT08961.bmp", :rad=>30, :sc=>18, :fs=>2, :ts=>0, :ids=>"⿰口𤍳", :similar=>" Similar: 噍/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT08978", :glyph=>"USAT08978.bmp", :rad=>33, :sc=>10, :fs=>2, :ts=>0, :ids=>"⿱土囧", :similar=>" Similar: 𡍬/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09034", :glyph=>"USAT09034.bmp", :rad=>110, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿰矛⿱攵口", :similar=>" Similar: 務/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09035", :glyph=>"USAT09035.bmp", :rad=>72, :sc=>18, :fs=>2, :ts=>0, :ids=>"⿰日⿱山黒", :similar=>" Similar: 曛/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>14, :comment=>nil}
+{:id=>"USAT09069", :glyph=>"USAT09069.bmp", :rad=>120, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿱父糸", :similar=>" Similar: 紊/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>4, :comment=>nil}
+{:id=>"USAT09073", :glyph=>"USAT09073.bmp", :rad=>30, :sc=>12, :fs=>2, :ts=>0, :ids=>"⿳吅大⿻匚一", :similar=>" Similar: 𠸶/  ", :evidence=>"IRGN2230SATWS2017Evidences6.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT09121", :glyph=>"USAT09121.bmp", :rad=>156, :sc=>15, :fs=>4, :ts=>0, :ids=>"⿺𧺆次", :similar=>" Similar: 趑/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09146", :glyph=>"USAT09146.bmp", :rad=>169, :sc=>18, :fs=>4, :ts=>0, :ids=>"⿵門畜", :similar=>" Non-similar and synonymous: 𨵵/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>10, :comment=>nil}
+{:id=>"USAT09153", :glyph=>"USAT09153.bmp", :rad=>199, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿱⿻𠈌十又", :similar=>" Similar: 麥/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>0, :comment=>nil}
+{:id=>"USAT09156", :glyph=>"USAT09156.bmp", :rad=>37, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿱⿰支大", :similar=>" Similar: 焂/ 倏/ 倐/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09159", :glyph=>"USAT09159.bmp", :rad=>69, :sc=>16, :fs=>2, :ts=>0, :ids=>"⿰單斤", :similar=>nil, :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT09174", :glyph=>"USAT09174.bmp", :rad=>149, :sc=>32, :fs=>2, :ts=>0, :ids=>"⿲言⿳山大買言", :similar=>" Similar: 讟/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>25, :comment=>nil}
+{:id=>"USAT09177", :glyph=>"USAT09177.bmp", :rad=>75, :sc=>11, :fs=>1, :ts=>0, :ids=>"⿰木𡉵", :similar=>" Similar: 桃/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09185", :glyph=>"USAT09185.bmp", :rad=>115, :sc=>13, :fs=>3, :ts=>0, :ids=>"⿰禾臽", :similar=>" Similar: 稻/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT09186", :glyph=>"USAT09186.bmp", :rad=>119, :sc=>17, :fs=>3, :ts=>0, :ids=>"⿳米黒", :similar=>" Similar: 糞/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>11, :comment=>nil}
+{:id=>"USAT09215", :glyph=>"USAT09215.bmp", :rad=>177, :sc=>16, :fs=>4, :ts=>0, :ids=>"⿰革𥤦", :similar=>" Similar: 鞚/   Similar but semantically different: 䩳/ 𩋛/ 䩔/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09224", :glyph=>"USAT09224.bmp", :rad=>112, :sc=>13, :fs=>3, :ts=>0, :ids=>"⿰石⿱从开", :similar=>" Similar: 硑/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT09239", :glyph=>"USAT09239.bmp", :rad=>50, :sc=>12, :fs=>1, :ts=>0, :ids=>"⿰巾扁", :similar=>" Similar: 惼/   Non-similar and synonymous: 褊/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>9, :comment=>nil}
+{:id=>"USAT09241", :glyph=>"USAT09241.bmp", :rad=>64, :sc=>10, :fs=>3, :ts=>0, :ids=>"⿰扌⿱爫巳", :similar=>" Similar: 𢮤/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09599", :glyph=>"USAT09599.bmp", :rad=>140, :sc=>18, :fs=>2, :ts=>0, :ids=>"⿱艹𡼡", :similar=>" Similar: 薰/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT09603", :glyph=>"USAT09603.bmp", :rad=>167, :sc=>15, :fs=>5, :ts=>0, :ids=>"⿰金⿱厼又", :similar=>" Similar: 鋄/   Similar but semantically different: 鋑/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT09608", :glyph=>"USAT09608.bmp", :rad=>77, :sc=>12, :fs=>3, :ts=>0, :ids=>"⿰㱑㐱", :similar=>" Similar: 殄/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT09609", :glyph=>"USAT09609.bmp", :rad=>74, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿳九罒月", :similar=>" Similar: 脅/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>7, :comment=>nil}
+{:id=>"USAT90333", :glyph=>"USAT90333.bmp", :rad=>82, :sc=>12, :fs=>5, :ts=>0, :ids=>"⿰⿸尸目毛", :similar=>" Similar: 𣮮/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT90361", :glyph=>"USAT90361.bmp", :rad=>163, :sc=>12, :fs=>4, :ts=>0, :ids=>"⿺辶⿱穴亐", :similar=>" Similar: 𨖜/   Similar but semantically different: 𨕠/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT90387", :glyph=>"USAT90387.bmp", :rad=>140, :sc=>18, :fs=>1, :ts=>0, :ids=>"⿰⿱艹麥壬", :similar=>" Similar: 𦼆/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>15, :comment=>nil}
+{:id=>"USAT90388", :glyph=>"USAT90388.bmp", :rad=>53, :sc=>15, :fs=>5, :ts=>0, :ids=>"⿸广隂", :similar=>" Similar: 廕/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>12, :comment=>nil}
+{:id=>"USAT90392", :glyph=>"USAT90392.bmp", :rad=>46, :sc=>11, :fs=>3, :ts=>0, :ids=>"⿳山凶禸", :similar=>" Similar: 𡼁/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>8, :comment=>nil}
+{:id=>"USAT90393", :glyph=>"USAT90393.bmp", :rad=>157, :sc=>16, :fs=>4, :ts=>0, :ids=>"⿰𧾷竒", :similar=>" Similar: 踦/  ", :evidence=>"IRGN2230SATWS2017Evidences7.pdf", :total=>9, :comment=>nil}

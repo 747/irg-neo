@@ -1,0 +1,58 @@
+doctype 5
+html lang='ja'
+  head
+    == slim :_include
+    title = "Character browser: ##{@charsn} of #{@set}"
+
+  body
+    == slim :_heading
+
+    == slim :_notification
+
+    - if @motions
+      #charinfo.navbar.bg-secondary
+        #prev.navbar-section
+          p: a href==@prevsn == "&#x21E6; #{@prevsn}"
+        #current.navbar-center: p
+          = @charsn
+          br
+          span.text-bold = @charcode
+        #next.navbar-section
+          p: a href==@nextsn == "#{@nextsn} &#x21E8;"
+
+      #timeline.container: .columns
+        / - attrs = CharMotion.attributes.reject { |k, v| v.type == DateTime }.keys
+        - @motions.each do |m|
+          ul.column.motion.menu id=m.id
+            - doc = m.document
+            li.menu-item: .tile.tile-centered.motion-header: .tile-content
+              .tile-title.text-bold.text-primary.text-ellipsis title=doc.title = doc.title
+              - if doc.doc_id
+                .tile-subtitle = "(#{doc.doc_id})"
+            li.menu-item: .tile.tile-centered.motion-header
+              - path = m.glyph.path || "#{doc.doc_id}/#{m.glyph.name}"
+              img.glyph.tile-icon src==url("/images/#{path}") title="glyph"
+              p.tile-content = File.basename(path)
+            li.menu-item: .tile.tile-centered.motion-header
+              - m.evidences.each do |ev|
+                img.evidence.tile-icon.tooltip data-tooltip=ev.path src==url("/images/#{ev.path}") title="evidence"
+            li.menu-item
+            li.menu-item = "Rad. #{lookup_han(m.rad)} (#{lookup_kx(m.rad)} #{m.rad/10.0})"
+            - [m.sc, m.fs, m.ts, m.ids, m.similar, m.total].each do |pt|
+              li.menu-item.text-ellipsis title=pt = pt
+            li.menu-item.text-bold class="text-#{{live: 'success', postponed: 'warning', withdrawn: 'error'}[m.status]}" = m.status
+            li.menu-item = m.comment
+        ul#caption.column.menu.bg-primary.text-right
+          li.menu-item: .tile.tile-centered.motion-header: .tile-content File
+          li.menu-item: .tile.tile-centered.motion-header: .tile-content Glyph
+          li.menu-item: .tile.tile-centered.motion-header: .tile-content Evidences
+          li.menu-item Unifies...
+          li.menu-item Radical
+          li.menu-item SC
+          li.menu-item FS
+          li.menu-item T/S
+          li.menu-item IDS
+          li.menu-item Similar
+          li.menu-item Total
+          li.menu-item Status
+          li.menu-item Comment

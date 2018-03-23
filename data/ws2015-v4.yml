@@ -1,0 +1,7 @@
+document:
+  doc_id: 'IRGN2223'
+  title: 'WS 2015 Version 4'
+  assigned_on: '2017-06-20'
+  published_on: '2017-07-27'
+  # live_sheet: 0
+  format: 'ws2015.attributes'

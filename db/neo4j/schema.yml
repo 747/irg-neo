@@ -1,0 +1,65 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of ActiveNode to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.yml definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using neo4j:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+---
+:constraints:
+- CONSTRAINT ON ( `neo4j::migrations::schemamigration`:`Neo4j::Migrations::SchemaMigration`
+  ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
+- CONSTRAINT ON ( agent:Agent ) ASSERT agent.uuid IS UNIQUE
+- CONSTRAINT ON ( character:Character ) ASSERT character.uuid IS UNIQUE
+- CONSTRAINT ON ( charmotion:CharMotion ) ASSERT charmotion.uuid IS UNIQUE
+- CONSTRAINT ON ( datafile:DataFile ) ASSERT datafile.uuid IS UNIQUE
+- CONSTRAINT ON ( document:Document ) ASSERT document.doc_id IS UNIQUE
+- CONSTRAINT ON ( document:Document ) ASSERT document.short_name IS UNIQUE
+- CONSTRAINT ON ( document:Document ) ASSERT document.uuid IS UNIQUE
+- CONSTRAINT ON ( meeting:Meeting ) ASSERT meeting.uuid IS UNIQUE
+- CONSTRAINT ON ( memorandum:Memorandum ) ASSERT memorandum.short_name IS UNIQUE
+- CONSTRAINT ON ( memorandum:Memorandum ) ASSERT memorandum.uuid IS UNIQUE
+- CONSTRAINT ON ( redirection:Redirection ) ASSERT redirection.uuid IS UNIQUE
+- CONSTRAINT ON ( series:Series ) ASSERT series.short_name IS UNIQUE
+- CONSTRAINT ON ( series:Series ) ASSERT series.uuid IS UNIQUE
+- CONSTRAINT ON ( source:Source ) ASSERT source.prefix IS UNIQUE
+- CONSTRAINT ON ( source:Source ) ASSERT source.short_name IS UNIQUE
+:indexes:
+- INDEX ON :Agent(name)
+- INDEX ON :CharMotion(status)
+- INDEX ON :Character(utf8)
+- INDEX ON :Organization(name)
+- INDEX ON :Person(name)
+- INDEX ON :Series(name)
+- INDEX ON :Source(name)
+:versions:
+- '20180115074538'
+- '20180115074704'
+- '20180115074705'
+- '20180115074706'
+- '20180115074707'
+- '20180115074708'
+- '20180115074709'
+- '20180115074710'
+- '20180115074711'
+- '20180115074712'
+- '20180116063725'
+- '20180116063726'
+- '20180116063727'
+- '20180116063728'
+- '20180116063729'
+- '20180116063936'
+- '20180116063937'
+- '20180116064158'
+- '20180118081700'
+- '20180126024714'
+- '20180213033322'
+- '20180213033323'
+- '20180213033324'
+- '20180213033328'
+- '20180306170609'

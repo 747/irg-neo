@@ -1,0 +1,2 @@
+bundle exec rake neo4j:install[community-3.3.1]
+bundle exec rake neo4j:start

@@ -1,0 +1,55 @@
+constants:
+  series:
+    name: 'IRG Working Set 2015'
+    short_name: 'WS2015'
+  prefixes: ['T', 'K', 'SAT', 'G', ['UTC', 'U'], ['UK', 'U']]
+  evidence:
+    UTC: 'IRGN2091RUTC.pdf'
+    UK: 'IRGN2107_evidence.pdf'
+fields:
+  - [':number']
+  - [':code', 'U'] # shared by US and UK
+  - [':glyph', 'U'] # same as above
+  - [':code', 'T']
+  - [':glyph', 'T']
+  - [':code', 'K']
+  - [':glyph', 'K']
+  - [':code', 'SAT']
+  - [':glyph', 'SAT']
+  - [':code', 'G']
+  - [':glyph', 'G']
+  - [null, 'UTC'] # UTC Code
+  - [':rad']
+  - [':sc']
+  - [':fs']
+  - [':ts']
+  - [':ids', null, null, !ruby/regexp '/\s*\/\s*/']
+  - [':similar']
+  - [':evidence', 'UTC', !ruby/regexp '/(Fig(?<warn-period>\.?)(?<warn-space> ?)(?<fig>\S+))/i', !ruby/regexp '/\s*,\s*/'] # UTC Evidence (Figure No.)
+  - [null, 'UTC'] # UTC Evidence (Title)
+  - [null, 'UTC'] # UTC Evidence (Location)
+  - [':total', 'UTC']
+  - [null, 'UTC'] # UTC Ext. F2 Serial No.
+  - [null, 'T'] # T References to evidence documents A
+  - [null, 'T'] # T References to evidence documents B
+  - [':evidence', 'T', !ruby/regexp '/(?<name>\S+\.[[:alpha:]]{3})(?: page(?<warn-after-page> ?)(?<page>\d+))?/i']
+  - [':total', 'T']
+  - [null, 'K'] # K Ref. to Evidence doc
+  - [':evidence', 'K']
+  - [':total', 'K']
+  - [null, 'G'] # G Ref. to Evidence doc
+  - [null, 'G'] # G Page No. in Evidence file(optional)
+  - [null, 'G'] # G Row No. in Evidence file(optional)
+  - [null, 'G'] # G Position in the Row (optional)
+  - [':evidence', 'G', !ruby/regexp '/(?<name>\S+\.[[:alpha:]]{3})(?: page(?<warn-after-page> ?)(?<page>\d+))?/i']
+  - [':total', 'G']
+  - [':evidence', 'SAT']
+  - [':total', 'SAT']
+  - [null, 'UK'] # UK Ref. to Evidence doc
+  - [':evidence', 'UK', !ruby/regexp '/(Fig\.(?<warn-space> ?)(?<fig>\S+))/i', !ruby/regexp '/\s*;\s*/'] # UK file name of evidence image
+  - [null, 'UK'] # UK Font code point
+  - [null, 'UK'] # UK Font glyph
+  - [null, 'UK'] # UK Other source references
+  - [null, 'UK'] # UK Mapping to traditional or simplified character
+  - [':total', 'UK']
+  - [null, 'UK'] # UK Note

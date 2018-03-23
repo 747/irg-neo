@@ -1,0 +1,62 @@
+constants:
+  series:
+    name: 'IRG Working Set 2015'
+    short_name: 'WS2015'
+  prefixes: ['T', 'K', 'SAT', 'G', ['UTC', 'U'], ['UK', 'U']]
+  evidence:
+    UTC: 'IRGN2091RUTC.pdf'
+    UK: 'IRGN2107_evidence.pdf'
+fields:
+# - [prop_name, source_prefix, parse_rule, split_rule, ref_prop (supply if the prop is blank)]
+  - [':number']
+  - [':comment']
+  - [':code', 'UTC']
+  - [':glyph', 'U'] # shared by US and UK
+  - [':code', 'UK']
+  - [':code', 'T']
+  - [':glyph', 'T']
+  - [':code', 'K']
+  - [':glyph', 'K']
+  - [':code', 'SAT']
+  - [':glyph', 'SAT']
+  - [':code', 'G']
+  - [':glyph', 'G']
+  - [null, 'UTC'] # UTC Code
+  - [':rad']
+  - [':sc']
+  - [':fs']
+  - [':ts']
+  - [':ids', null, null, !ruby/regexp '/\s*\/\s*/']
+  - [null]
+  - []
+  - [null, null, null, null, ':total']
+  - [':total']
+  - [':similar']
+  - [':evidence', 'UTC', !ruby/regexp '/(Fig(?<warn-period>\.?)(?<warn-space> ?)(?<fig>\S+))/i', !ruby/regexp '/\s*,\s*/'] # UTC Evidence (Figure No.)
+  - [null, 'UTC'] # UTC Evidence (Title)
+  - [null, 'UTC'] # UTC Evidence (Location)
+  - [null, 'UTC']
+  - [null, 'UTC'] # UTC Ext. F2 Serial No.
+  - [null, 'T'] # T References to evidence documents A
+  - [null, 'T'] # T References to evidence documents B
+  - [':evidence', 'T', !ruby/regexp '/(?<name>\S+\.[[:alpha:]]{3})(?: page(?<warn-after-page> ?)(?<page>\d+))?/i']
+  - [null, 'T']
+  - [null, 'K'] # K Ref. to Evidence doc
+  - [':evidence', 'K']
+  - [null, 'K']
+  - [null, 'G'] # G Ref. to Evidence doc
+  - [null, 'G'] # G Page No. in Evidence file(optional)
+  - [null, 'G'] # G Row No. in Evidence file(optional)
+  - [null, 'G'] # G Position in the Row (optional)
+  - [':evidence', 'G', !ruby/regexp '/(?<name>\S+\.[[:alpha:]]{3})(?: page(?<warn-after-page> ?)(?<page>\d+))?/i']
+  - [null, 'G']
+  - [':evidence', 'SAT']
+  - [null, 'SAT']
+  - [null, 'UK'] # UK Ref. to Evidence doc
+  - [':evidence', 'UK', !ruby/regexp '/(Fig\.(?<warn-space> ?)(?<fig>\S+))/i', !ruby/regexp '/\s*;\s*/'] # UK file name of evidence image
+  - [null, 'UK'] # UK Font code point
+  - [null, 'UK'] # UK Font glyph
+  - [null, 'UK'] # UK Other source references
+  - [null, 'UK'] # UK Mapping to traditional or simplified character
+  - [null, 'UK']
+  - [null, 'UK'] # UK Note
