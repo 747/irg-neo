@@ -12,9 +12,7 @@
 .sass-cache/
 *.css.map
 
-/db/neo4j/development/*
 coffeelint.json
-/output/
 output.txt
 # neo4j server credentials
 /login.rb
@@ -57,3 +55,6 @@ build-iPhoneSimulator/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+# keep .gitignore
+!.gitignore
