@@ -8,6 +8,7 @@ require 'active_support/core_ext'
 require 'hashdiff'
 require 'yaml'
 require 'pathname'
+require 'set'
 
 abort("Needs 2 arguments: DOCDEFPATH BOOKPATH") if 2.times.reduce(false) { |m, a| m ||= ARGV[a].blank? }
 STDOUT.sync = true
@@ -33,6 +34,8 @@ usources = %w[G H J KP K M T U V]
 # parse spreadsheets
 warnings = []
 chars = []
+known_glyphs = Set.new
+known_evids = Set.new
 fields = config[:fields].map { |f| f[0] = f[0][1..-1].intern if /^:/ =~ f[0]; f } # Psych cannot handle symbols correctly cf. https://github.com/ruby/psych/issues/12
 warnr = -> n, m { warnings << ("Row ##{'% 4d' % n}: " << m) }
 proofread = -> str, match, row, col, callback {
@@ -74,6 +77,17 @@ spr.sheets.size.times do |num| # How to officially do `each_with_pagename.with_i
         } : (entries.size > 1 ? entries : entries.first) # revert to string if possible
         parent[ name || header[i].intern ] = values
         parent[ref.delete(':').intern] ||= values if ref # insert this column's data only if the referenced key is uninput or blank
+      end
+
+      case name
+      when :glyph, :evidence
+        container = name == :glyph ? known_glyphs : known_evids
+        case values
+        when String
+          container << values
+        when Array
+          values.each { |v| container << ( v.is_a?(String) ? v : v[:name] ) }
+        end
       end
     end
     serial ? chars[serial] = char : warnr[ri, "No valid serial number!"]
@@ -232,6 +246,7 @@ open(Pathname('./output/check') + "#{Time.now.strftime($TIMESTAMP)}_#{s[:short_n
   warnings.each { |wa| w.puts wa }
 end
 
+# update!
 if testing
   open(Pathname('./output/preview') + "#{Time.now.strftime($TIMESTAMP)}_#{docdef[:doc_id]}.yml", "w:utf-8") { |t|
     t.write YAML.dump(chars)
@@ -239,37 +254,59 @@ if testing
 else
   print "\n"
 
+  print "retrieving chars..."
+  characters = set.chars.map { |e| [e[:code], e] }.to_h
+  puts "\r#{characters.size} existing chars found"
+
+  print "retrieving glyphs..."
+  glyphs = set.chars.motions.glyph.map { |e| [e[:name], e] }.to_h
+  puts "\r#{glyphs.size} existing glyphs found"
+  added_glyphs = known_glyphs - glyphs.keys.to_set
+  TransactionalExec.new(1000) do |gl, i|
+    added = Glyph.create(name: gl, filetype: File.extname(gl).delete('.'))
+    glyphs[gl] = added
+  end.execute(added_glyphs)
+  puts "#{added_glyphs.size} new glyphs added"
+
+  print "retrieving evidences..."
+  evids = set.chars.motions.evidences.map { |e| [e[:name], e] }.to_h
+  puts "\r#{evids.size} existing evidences found"
+  added_evids = known_evids - evids.keys.to_set
+  TransactionalExec.new(1000) do |ev, i|
+    added = Evidence.create(name: ev, filetype: File.extname(ev).delete('.'))
+    evids[ev] = added
+  end.execute(added_evids)
+  puts "#{added_evids.size} new evidences added"
+
   print "cleaning up DB..."
   # めんどくさいので一旦削除
-  query = Neo4j::Core::Query.new.match("(s:Series {name: '#{set[:name]}'})--(c:Character)--(m:CharMotion)--(d:Document {doc_id: '#{doc[:doc_id]}'})").match('(m)--(g:Glyph)').match('(m)--(e:Evidence)').detach_delete(:c, :m, :g, :e).return('count(c)')
+  query = Neo4j::Core::Query.new.match("(s:Series {name: '#{set[:name]}'})--(c:Character)--(m:CharMotion)--(d:Document {doc_id: '#{doc[:doc_id]}'})").detach_delete(:m).return('count(m)')
   result = Neo4j::ActiveBase.current_session.query(query)
   existing = result.rows[0][0]
-  print "\rdeleted #{existing} chars on DB"
-  print "\n"
+  puts "\rdeleted #{existing} motions on DB"
 
   print "updating DB..."
   rad2int = -> r { (r * 10).round }
   internal_refs = []
   unicode_refs = []
-  t = TransactionalExec.new(1000) do |ch, chi|
+
+  TransactionalExec.new(1000) do |ch, chi|
     next if ch.blank?
     print "\rupdating DB -- ##{chi}"
     
-    char = Character.new code: ch.delete(:code)
+    code = ch.delete(:code)
+    char = characters[code] || Character.new(code: code)
     motion = CharMotion.new char: char, document: doc
     ch.each { |prop, val|
       case prop
       when :glyph
-        gl = Glyph.create name: val, filetype: File.extname(val).delete('.')
+        gl = glyphs[val] || raise("Unknown glyph name #{val} in #{code}!")
         motion.glyph = gl
       when :evidence
         evs = val.is_a?(Array) ? val.map { |e| e.is_a?(Hash) ? e : {name: e.to_s} } : [{name: val}]
         evs.each { |v|
-          ev = Evidence.create name: v[:name], filetype: File.extname(v[:name]).delete('.')
-          HasEvidence.create(motion, ev, v.except(:name)) unless motion.evidences.each_with_rel.select { |n, r|
-            n.name == v[:name] &&
-            v.except(:name).reduce(true) { |m, (k, v)| m && r[k] == v }
-          }.present?
+          ev = evids[v[:name]] || raise("Unknown evidence name #{v[:name]} in #{code}!")
+          HasEvidence.create(motion, ev, v.except(:name))
         }
       when :live, :postponed, :withdrawn
         motion.status = prop if val
@@ -293,19 +330,8 @@ else
     char.save
     motion.save
     Constitutes.create char, set, serial: chi
-  end
-
-  t.execute chars
-  # chars.each_with_index { |ch, chi|
-  #   next if ch.blank?
-  #   # print "\rupdating DB -- ##{chi}"
-  #   # char = Character.find_or_create_by! code: ch.delete(:code)
-  #   # Constitutes.create! char, set, serial: chi
-  #   # motion = CharMotion.find_or_create_by! char: char, document: doc
-
-  #   # motion.save
-  # }
-  print "\n"
+  end.execute(chars)
+  # print "\n"
 
   puts "inserting unification:"
   print "  internals..."
@@ -318,15 +344,15 @@ else
       raise "Invalid serial number #{r[0..1].join(' or ')} under #{set.short_name}"
     end
   }
-  # print "\n"
+  print "\n"
   print "  externals..."
   unicode_refs.each.with_index(1) { |r, idx|
-  print "\r  externals -- #{idx}/#{unicode_refs.size}"
-  if (origin = set.chars(:c).rel_where(serial: r[0]).motions(:m).document.match_to(doc).pluck(:m).first)
+    print "\r  externals -- #{idx}/#{unicode_refs.size}"
+    if (origin = set.chars(:c).rel_where(serial: r[0]).motions(:m).document.match_to(doc).pluck(:m).first)
       UnifiedBy.create! origin, Character.find_by!(utf8: r[1]), r[2]
     else
       raise "Invalid serial number #{r[0]} under #{set.short_name}"
     end
   }
-  print "\n"
 end
+print "\n"

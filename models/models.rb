@@ -12,7 +12,7 @@ class Memorandum
   include Neo4j::ActiveNode
   include Neo4j::Timestamps
   property :title, type: String
-  property :short_name, type: String#, constraint: :unique # non-obligatory prop
+  property :short_name, type: String
   property :assigned_on, type: DateTime
 
   validates :title, :assigned_on, presence: true
@@ -24,7 +24,7 @@ end
 class Document < Memorandum
   include Neo4j::ActiveNode
   include Neo4j::Timestamps
-  property :doc_id, type: String#, constraint: :unique
+  property :doc_id, type: String
   property :published_on, type: DateTime
 
   validates :doc_id, presence: true
@@ -32,13 +32,17 @@ class Document < Memorandum
   has_many :out, :re, rel_class: :RespondsTo
   has_many :in, :responses, rel_class: :RespondsTo
   has_many :out, :files, rel_class: :HasFile
+
+  before_save do
+    self.short_name = self.doc_id
+  end
 end
 
 class Series
   include Neo4j::ActiveNode
   include Neo4j::Timestamps
   property :name, type: String
-  property :short_name, type: String#, constraint: :unique
+  property :short_name, type: String
 
   validates :name, :short_name, presence: true
 
@@ -46,7 +50,7 @@ class Series
 end
 
 class Source < Series
-  property :prefix, type: String#, constraint: :unique
+  property :prefix, type: String
 
   validates :prefix, presence: true
 end
