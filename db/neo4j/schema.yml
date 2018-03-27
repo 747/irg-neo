@@ -16,6 +16,7 @@
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
 - CONSTRAINT ON ( agent:Agent ) ASSERT agent.uuid IS UNIQUE
 - CONSTRAINT ON ( character:Character ) ASSERT character.uuid IS UNIQUE
+- CONSTRAINT ON ( character:Character ) ASSERT character.code IS UNIQUE
 - CONSTRAINT ON ( charmotion:CharMotion ) ASSERT charmotion.uuid IS UNIQUE
 - CONSTRAINT ON ( datafile:DataFile ) ASSERT datafile.uuid IS UNIQUE
 - CONSTRAINT ON ( document:Document ) ASSERT document.doc_id IS UNIQUE

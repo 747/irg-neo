@@ -3,7 +3,8 @@
 	// for the documentation about the extensions.json format
 	"recommendations": [
 		// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
-		"formulahendry.code-runner",
+		"castwide.solargraph",
+		"rebornix.ruby",
 		"lkytal.coffeelinter",
 		"robinbentley.sass-indented",
 		"shinnn.stylelint",
