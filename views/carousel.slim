@@ -22,28 +22,37 @@ html lang='ja'
 
       #timeline.container: .columns
         / - attrs = CharMotion.attributes.reject { |k, v| v.type == DateTime }.keys
-        - @motions.each do |m|
-          ul.column.motion.menu id=m.id
-            - doc = m.document
+        - @motions.each do |e|
+          - m, u = e # [Hash, True/False]
+          - mo, doc = m[:motion], m[:document]
+          / get undeclared properties -- isn't there a better way?
+          - misc = mo.instance_variable_get(:@attributes).except(*mo.declared_properties.registered_properties.keys.map(&:to_s), 'uuid')
+          ul.column.motion.menu id=mo.id class="#{'unified bg-secondary' unless u}"
             li.menu-item: .tile.tile-centered.motion-header: .tile-content
               .tile-title.text-bold.text-primary.text-ellipsis title=doc.title = doc.title
               - if doc.doc_id
                 .tile-subtitle = "(#{doc.doc_id})"
-            li.menu-item: .tile.tile-centered.motion-header
-              - path = m.glyph.path || "#{doc.doc_id}/#{m.glyph.name}"
+            li.menu-item data-value=m[:source] = m[:source]
+            li.menu-item[data-value=m[:glyph].name]: .tile.tile-centered.motion-header
+              - path = m[:glyph].path || "#{doc.doc_id}/#{m[:glyph].name}"
               img.glyph.tile-icon src==url("/images/#{path}") title="glyph"
               p.tile-content = File.basename(path)
             li.menu-item: .tile.tile-centered.motion-header
-              - m.evidences.each do |ev|
+              - m[:evidences].each do |ev|
                 img.evidence.tile-icon.tooltip data-tooltip=ev.path src==url("/images/#{ev.path}") title="evidence"
-            li.menu-item
-            li.menu-item = "Rad. #{lookup_han(m.rad)} (#{lookup_kx(m.rad)} #{m.rad/10.0})"
-            - [m.sc, m.fs, m.ts, m.ids, m.similar, m.total].each do |pt|
-              li.menu-item.text-ellipsis title=pt = pt
-            li.menu-item.text-bold class="text-#{{live: 'success', postponed: 'warning', withdrawn: 'error'}[m.status]}" = m.status
-            li.menu-item = m.comment
+            li.menu-item 
+            li.menu-item[data-value=mo.rad] = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
+            - [mo.sc, mo.fs, mo.ts, mo.ids, mo.similar, mo.total].each do |pt|
+              li.menu-item.text-ellipsis data-value=pt title=pt = pt
+            li.menu-item.text-bold class="text-#{{live: 'success', postponed: 'warning', withdrawn: 'error'}[mo.status]}" data-value=mo.status = mo.status
+            li.menu-item data-value=mo.comment = mo.comment
+            - misc.each do |name, val|
+              li.menu-item: dl
+                  dt = name
+                  dd = val
         ul#caption.column.menu.bg-primary.text-right
           li.menu-item: .tile.tile-centered.motion-header: .tile-content File
+          li.menu-item Source
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Glyph
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Evidences
           li.menu-item Unifies...

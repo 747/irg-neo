@@ -39,7 +39,30 @@ class IRGT < Sinatra::Base
 
       @nextsn, @prevsn = list[idx == list.length-1 ? 0 : idx+1][0], list[idx-1][0]
       @charsn, @charcode = list[idx]
-      @motions = the_set.chars.rel_where(serial: @charsn).motions(:m).document.order(published_on: :desc).pluck(:m)
+      motion_structs = the_set.chars(:c).rel_where(serial: @charsn)
+        .motions(:m)
+        .branch { glyph(:g) }.branch { evidences(:e) }
+        .document.query_as(:d)
+        .optional_match('(d)-[:CONTAINS]->(um:CharMotion)-[:UNIFIED_BY]->(c)')
+        .optional_match('(um)-[:HAS_GLYPH]->(ug)')
+        .optional_match('(um)-[:HAS_EVIDENCE]->(ue)')
+        .optional_match('(um)-[:ON]->(uc)')
+        .with(:c, :m, :g, :d, :e, :um, :uc, :ug, uee: 'collect(ue)')
+        .with(
+          source: 'c.code',
+          motion: :m,
+          glyph: :g,
+          document: :d,
+          unified: 'CASE WHEN um IS NOT NULL THEN collect({motion: um, source: uc.code, glyph: ug, evidences: uee, document: d}) ELSE NULL END',
+          evidences: 'collect(e)'
+        )
+        .return(:source, :motion, :glyph, :evidences, :unified, :document)
+        .order(document: [{published_on: :desc}])
+      @motions = motion_structs.map { |e|
+        array = [[e.to_h.except(:unified), true]]
+        array.push( *( e.unified.map { |u| [u, false] if u.present? }.compact ) ) if e.unified
+        array
+      }.flatten(1)
     else
       @note << [:empty_set, params[:set]]
     end
