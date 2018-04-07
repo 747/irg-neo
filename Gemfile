@@ -3,10 +3,12 @@ ruby '~> 2.3'
 
 gem 'rake'
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'activesupport'
 
 gem 'sass'
 gem 'slim'
+gem 'coffee-script'
 
 gem 'neo4j'
 gem 'roo'
@@ -15,7 +17,6 @@ gem 'hashdiff'
 
 group :development do
   gem 'neo4j-rake_tasks'
-  gem 'sinatra-contrib'
   gem 'guard'
   gem 'guard-livereload', require: false
 end
