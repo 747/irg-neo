@@ -1,0 +1,18 @@
+constants:
+  series:
+    name: Proposal for IRG Working Set 2017 from SAT set
+    short_name: SAT2017
+  source:
+    prefix: USAT
+    short_name: SAT
+fields:
+  - [':code']
+  - [':glyph']
+  - [':rad']
+  - [':sc']
+  - [':fs']
+  - [':ts']
+  - [':ids']
+  - [':similar']
+  - [':evidence']
+  - [':total']

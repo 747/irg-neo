@@ -1,0 +1,8 @@
+document:
+  doc_id: 'IRGN2230'
+  title: 'SAT’s Submission for the IRG Working Set 2017'
+  assigned_on: '2017-06-21'
+  published_on: '2017-09-15'
+  live_sheet: 1
+  skip_sheets: [0]
+  format: 'sat2017.proposal'

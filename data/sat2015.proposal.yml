@@ -1,0 +1,16 @@
+constants:
+  series:
+    name: SAT Submission of IRG Working Set 2015 set
+    short_name: SAT2015
+  source:
+    prefix: USAT
+    short_name: SAT
+fields:
+  - [':code']
+  - [':rad']
+  - [':sc']
+  - [':fs']
+  - [':total']
+  - [':ts']
+  - [':ids']
+  - [':glyph']
