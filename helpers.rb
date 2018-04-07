@@ -17,12 +17,40 @@ module RadicalUtils
   end
   def _rad_normalize(num)
     case num
-    when Integer
-      num
-    when Float
-      (num * 10).round
-    else
-      nil
+    when Integer; num
+    when Float; (num * 10).round
+    else; nil
     end
+  end
+end
+
+module BuilderUtils
+  def query_browse(set, where, rel = true)
+    wheres = rel ? [{}, {serial: where}] : [{code: where}, {}]
+    set.chars(:c).where(wheres[0]).rel_where(wheres[1])
+      .motions(:m).document.query_as(:d)
+      .optional_match('(m)-[:HAS_GLYPH]->(g)').break
+      .optional_match('(m)-[:HAS_EVIDENCE]->(e)').break
+      .optional_match('(d)-[:CONTAINS]->(um:CharMotion)-[:UNIFIED_BY]->(c)').break
+      .optional_match('(um)-[:HAS_GLYPH]->(ug)').break
+      .optional_match('(um)-[:HAS_EVIDENCE]->(ue)').break
+      .optional_match('(um)-[:ON]->(uc)').break # all optional matches must be independent
+      .with(:c, :m, :g, :d, :e, :um, :uc, :ug, uee: 'collect(ue)')
+      .with(
+        source: 'c.code',
+        motion: :m,
+        glyph: :g,
+        document: :d,
+        unified: 'CASE WHEN um IS NOT NULL THEN collect({motion: um, source: uc.code, glyph: ug, evidences: uee, document: d}) ELSE NULL END',
+        evidences: 'collect(e)'
+      )
+      .return(:source, :motion, :glyph, :evidences, :unified, :document)
+      .order(document: [{published_on: :desc}])
+      .map { |e|
+        array = [[e.to_h.except(:unified), true]]
+        array.push( *( e.unified.map { |u| [u, false] if u.present? }.compact ) ) if e.unified
+        array
+      }
+      .flatten(1)
   end
 end

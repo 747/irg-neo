@@ -12,17 +12,19 @@ html lang='ja'
     - if @motions
       #charinfo.navbar.bg-secondary
         #prev.navbar-section
-          p: a href==@prevsn == "&#x21E6; #{@prevsn}"
-        #current.navbar-center: p
-          = @charsn
+          - if @prevsn
+            p: a href==@prevsn == "&#x21E6; #{@prevsn}"
+        #current.navbar-center: p.text-center
+          = @charsn || @set_name
           br
           span.text-bold = @charcode
         #next.navbar-section
-          p: a href==@nextsn == "#{@nextsn} &#x21E8;"
+          - if @nextsn
+            p: a href==@nextsn == "#{@nextsn} &#x21E8;"
 
       #timeline.container: .columns
         / - attrs = CharMotion.attributes.reject { |k, v| v.type == DateTime }.keys
-        - @motions.each do |e|
+        - @motions.each_with_index do |e, index|
           - m, u = e # [Hash, True/False]
           - mo, doc = m[:motion], m[:document]
           / get undeclared properties -- isn't there a better way?
@@ -40,7 +42,11 @@ html lang='ja'
             li.menu-item: .tile.tile-centered.motion-header
               - m[:evidences].each do |ev|
                 img.evidence.tile-icon.tooltip data-tooltip=ev.path src==url("/images/#{ev.path}") title="evidence"
-            li.menu-item 
+            li.menu-item
+              - if u
+                - if @motions[index+1] && !@motions[index+1][1]
+                  button.toggle-unified.btn
+              / TODO: the unified of the unified
             li.menu-item[data-value=mo.rad] = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
             - [mo.sc, mo.fs, mo.ts, mo.ids, mo.similar, mo.total].each do |pt|
               li.menu-item.text-ellipsis data-value=pt title=pt = pt

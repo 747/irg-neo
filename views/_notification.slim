@@ -8,6 +8,9 @@
     - when :invalid_char
       span.text-bold => v
       | is an invalid serial number in the collection.
+    - when :invalid_code
+      span.text-bold => v
+      | is an invalid name in the collection.
     - when :empty_set
       span.text-bold => v
       | is an empty collection.
