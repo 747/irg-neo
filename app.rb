@@ -17,11 +17,19 @@ class IRGT < Sinatra::Base
     'TODO!'
   end
 
+  get '/images/*' do
+    redirect 'http://placehold.jp/13/a4a5a6/ededed/50x50.png?text=Image%0AComing%0ASoon'
+  end
+
+  get '/site-js/*.js' do
+    coffee :"javascripts/#{params[:splat].join('/')}"
+  end
+
   get '/site-css/*.css' do
     sass :"stylesheets/#{params[:splat].join('/')}"
   end
 
-  get '/browse/:set/:serial/?:ver?', '/source/:source/:charid' do
+  get '/browse/:set/:serial/?:ver?', '/edit/:docid/:set/:serial', '/source/:source/:charid' do
     mode = params[:set].present? ? 1 : params[:source].present? ? 2 : 0
     @note = []
     @set = [nil, params[:set], params[:source]][mode]
@@ -29,7 +37,7 @@ class IRGT < Sinatra::Base
     if @set && (the_set = Series.find_by(short_name: @set))
       case mode
       when 1
-        list = the_set.chars(:c)&.where_not('(c)-[:REDIRECTS_FROM]-()')&.each_with_rel&.map { |c, r| [r.serial, c.code] }.sort_by {|s| s[0] }
+        list = query_list(the_set)
         if list.present?
           if params[:serial] =~ /\A\d+\z/
             num = params[:serial].to_i
@@ -38,13 +46,20 @@ class IRGT < Sinatra::Base
             @note << [:invalid_char, params[:serial]]
           end
 
-          unless idx = list.index { |e| e[0] == num }
+          unless idx = list.index { |e| e[:serial] == num }
             idx = 0
             @note << [:invalid_char, params[:serial]]
           end
 
-          @nextsn, @prevsn = list[idx == list.length-1 ? 0 : idx+1][0], list[idx-1][0]
-          @charsn, @charcode = list[idx]
+          target = params[:docid].present? ? Memorandum.find_by(short_name: params[:docid]) : nil
+          if target
+            @editing = target.attributes.slice(:uuid, :short_name, :title)
+          elsif params[:docid]
+            @note << [:invalid_doc, params[:docid]]
+          end
+
+          @nextsn, @prevsn = list[idx == list.length-1 ? 0 : idx+1][:serial], list[idx-1][:serial]
+          @charsn, @charcode = list[idx].fetch_values(:serial, :code)
           @motions = query_browse(the_set, @charsn)
         else
           @note << [:empty_set, @set]
@@ -63,8 +78,5 @@ class IRGT < Sinatra::Base
       @note << [:invalid_set, params[:set]]
     end
     slim :carousel
-  end
-
-  get '/edit/:doc/:set/:serial' do
   end
 end

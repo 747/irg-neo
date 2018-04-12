@@ -2,7 +2,9 @@ doctype 5
 html lang='ja'
   head
     == slim :_include
-    title = "Character browser: ##{@charsn} of #{@set}"
+
+    - ident = @charsn ? "##{@charsn}" : @charcode
+    title = "Character browser: #{ident} of #{@set}"
 
   body
     == slim :_heading
@@ -29,31 +31,44 @@ html lang='ja'
           - mo, doc = m[:motion], m[:document]
           / get undeclared properties -- isn't there a better way?
           - misc = mo.instance_variable_get(:@attributes).except(*mo.declared_properties.registered_properties.keys.map(&:to_s), 'uuid')
-          ul.column.motion.menu id=mo.id class="#{'unified bg-secondary' unless u}"
+          ul.column.motion.menu id=mo.id class=('unified bg-secondary' unless u) data-date=(doc.published_on || doc.assigned_on)
             li.menu-item: .tile.tile-centered.motion-header: .tile-content
-              .tile-title.text-bold.text-primary.text-ellipsis title=doc.title = doc.title
+              .tile-title.text-bold.text-primary.text-ellipsis title=doc.title
+                = doc.title
               - if doc.doc_id
-                .tile-subtitle = "(#{doc.doc_id})"
-            li.menu-item data-value=m[:source] = m[:source]
-            li.menu-item[data-value=m[:glyph].name]: .tile.tile-centered.motion-header
+                .tile-subtitle
+                  = "(#{doc.doc_id})"
+            li.menu-item.comparable data-value=m[:source]
+              = m[:source]
+            li.menu-item.comparable[data-value=m[:glyph].name]: .tile.tile-centered.motion-header
               - path = m[:glyph].path || "#{doc.doc_id}/#{m[:glyph].name}"
               img.glyph.tile-icon src==url("/images/#{path}") title="glyph"
-              p.tile-content = File.basename(path)
+              .tile-content: p.tile-title
+                = File.basename(path)
             li.menu-item: .tile.tile-centered.motion-header
               - m[:evidences].each do |ev|
-                img.evidence.tile-icon.tooltip data-tooltip=ev.path src==url("/images/#{ev.path}") title="evidence"
+                img.evidence.tile-icon.tooltip{
+                  data-tooltip=ev.path
+                  src==url("/images/#{ev.path}")
+                  title="evidence" }
             li.menu-item
               - if u
                 - if @motions[index+1] && !@motions[index+1][1]
                   button.toggle-unified.btn
               / TODO: the unified of the unified
-            li.menu-item[data-value=mo.rad] = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
+            li.menu-item.comparable data-value=mo.rad
+              = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
             - [mo.sc, mo.fs, mo.ts, mo.ids, mo.similar, mo.total].each do |pt|
-              li.menu-item.text-ellipsis data-value=pt title=pt = pt
-            li.menu-item.text-bold class="text-#{{live: 'success', postponed: 'warning', withdrawn: 'error'}[mo.status]}" data-value=mo.status = mo.status
-            li.menu-item data-value=mo.comment = mo.comment
+              li.menu-item.comparable.text-ellipsis data-value=pt title=pt
+                = pt
+            li.menu-item.text-bold{
+              class=("text-" << {live: 'success', postponed: 'warning', withdrawn: 'error'}[mo.status])
+              data-value=mo.status }
+              = mo.status
+            li.menu-item.variable-comment.comparable data-value=mo.comment
+              = mo.comment
             - misc.each do |name, val|
-              li.menu-item: dl
+              li.menu-item.variable-others: dl
                   dt = name
                   dd = val
         ul#caption.column.menu.bg-primary.text-right
@@ -70,4 +85,5 @@ html lang='ja'
           li.menu-item Similar
           li.menu-item Total
           li.menu-item Status
-          li.menu-item Comment
+          li.menu-item.variable-comment Comment
+          li.menu-item.variable-others Other Attributes

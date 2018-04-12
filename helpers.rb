@@ -25,6 +25,15 @@ module RadicalUtils
 end
 
 module BuilderUtils
+  def query_list(set)
+    set.chars(:c, :r).query_as(:c, :r)
+      .where_not('(c)-[:REDIRECTS_FROM]-()')
+      .with(serial: 'r.serial', code: 'c.code')
+      .return(:serial, :code)
+      .order(:serial)
+      .to_a.map(&:to_h)
+  end
+  
   def query_browse(set, where, rel = true)
     wheres = rel ? [{}, {serial: where}] : [{code: where}, {}]
     set.chars(:c).where(wheres[0]).rel_where(wheres[1])
