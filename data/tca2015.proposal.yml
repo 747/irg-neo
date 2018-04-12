@@ -1,0 +1,27 @@
+constants:
+  series:
+    name: TCA Submssion of IRG Working Set 2015 set
+    short_name: TCA2015
+  source:
+    prefix: T
+    short_name: TCA
+fields:
+  - [':number']
+  - [':code']
+  - []
+  - [':glyph']
+  - [':rad']
+  - [':sc']
+  - [':fs']
+  - [':ts']
+  - [':ids']
+  - [':similar']
+  - [null]
+  - [null]
+  - [':evidence', null, null, !ruby/regexp '/\n/']
+  - [null]
+  - [null]
+  - [null]
+  - [null]
+  - [null]
+  - [':total']

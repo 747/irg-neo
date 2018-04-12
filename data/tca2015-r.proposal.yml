@@ -1,0 +1,22 @@
+constants:
+  series:
+    name: TCA reduced IRG 2015 Collection
+    short_name: TCA2015R
+  source:
+    prefix: T
+    short_name: TCA
+fields:
+  - [':number']
+  - [':code']
+  - []
+  - [':glyph']
+  - [':rad']
+  - [':sc']
+  - [':fs']
+  - [':ts']
+  - [':ids']
+  - [':similar']
+  - [null]
+  - [null]
+  - [':evidence', null, null, !ruby/regexp '/(?<name>\S+\.[[:alpha:]]{3})(?: page(?<warn-after-page> ?)(?<page>\d+))?/i']
+  - [':total']

@@ -1,0 +1,24 @@
+constants:
+  series:
+    name: ROK Submssion of IRG Working Set 2015 set
+    short_name: ROK2015
+  source:
+    prefix: K
+    short_name: ROK
+fields:
+  - [':number']
+  - [':code']
+  - []
+  - [':glyph']
+  - [':rad', null, !ruby/regexp '/^R([\d\.]+)/']
+  - [':sc']
+  - [':fs']
+  - [':ts']
+  - [':ids']
+  - [':similar']
+  - [null]
+  - []
+  - []
+  - []
+  - [':evidence']
+  - [':total']
