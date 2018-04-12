@@ -51,7 +51,7 @@ html lang='ja'
                   data-tooltip=ev.path
                   src==url("/images/#{ev.path}")
                   title="evidence" }
-            li.menu-item
+            li.menu-item: .tile.tile-centered.motion-header
               - if u
                 - if @motions[index+1] && !@motions[index+1][1]
                   button.toggle-unified.btn
@@ -76,7 +76,7 @@ html lang='ja'
           li.menu-item Source
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Glyph
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Evidences
-          li.menu-item Unifies...
+          li.menu-item: .tile.tile-centered.motion-header: .tile-content Unifies...
           li.menu-item Radical
           li.menu-item SC
           li.menu-item FS
