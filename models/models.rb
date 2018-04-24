@@ -32,6 +32,7 @@ class Document < Memorandum
   has_many :out, :re, rel_class: :RespondsTo
   has_many :in, :responses, rel_class: :RespondsTo
   has_many :out, :files, rel_class: :HasFile
+  has_many :out, :images, rel_class: :HasFile, model_class: :Image
 
   before_save do
     self.short_name = self.doc_id
@@ -104,6 +105,8 @@ class DataFile
   property :path, type: String
 
   validates :name, :filetype, presence: true
+
+  has_one :in, :document, rel_class: :HasFile
 end
 
 class Image < DataFile

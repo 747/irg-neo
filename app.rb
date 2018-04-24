@@ -59,7 +59,7 @@ class IRGT < Sinatra::Base
           end
 
           @nextsn, @prevsn = list[idx == list.length-1 ? 0 : idx+1][:serial], list[idx-1][:serial]
-          @charsn, @charcode = list[idx].fetch_values(:serial, :code)
+          @charsn, @charcode = list[idx].values_at(:serial, :code)
           @motions = query_browse(the_set, @charsn)
         else
           @note << [:empty_set, @set]
