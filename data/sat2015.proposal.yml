@@ -8,8 +8,8 @@ constants:
 fields:
   - [':code']
   - [':rad']
-  - [':sc']
   - [':fs']
+  - [':sc']
   - [':total']
   - [':ts']
   - [':ids']
