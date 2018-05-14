@@ -19,6 +19,10 @@ class Memorandum
 
   has_many :out, :motions, rel_class: :Contains, model_class: :CharMotion
   has_many :in, :authors, rel_class: :Writes
+
+  def date
+    self[:assigned_on]
+  end
 end
 
 class Document < Memorandum
@@ -36,6 +40,10 @@ class Document < Memorandum
 
   before_save do
     self.short_name = self.doc_id
+  end
+
+  def date
+    self[:published_on] || self[:assigned_on]
   end
 end
 
@@ -83,7 +91,7 @@ class CharMotion
   property :similar, type: String
   property :total, type: Integer
   property :comment, type: String
-  enum status: [:live, :postponed, :withdrawn]
+  enum status: [:live, :postponed, :withdrawn], _default: :live
 
   # validates :rad, :sc, :fs, :ts, :ids, :total, presence: true
 
