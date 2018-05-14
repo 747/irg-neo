@@ -5,6 +5,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'activesupport'
+gem 'tobias-sinatra-url-for' # building subhost absolute path
 
 gem 'sass'
 gem 'slim'

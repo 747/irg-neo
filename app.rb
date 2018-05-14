@@ -5,6 +5,7 @@ require 'active_support'
 require 'active_support/core_ext'
 require 'sinatra/reloader' #if development?
 require 'sinatra/multi_route'
+require 'sinatra/url_for'
 require 'json'
 
 class IRGT < Sinatra::Base
@@ -13,6 +14,7 @@ class IRGT < Sinatra::Base
   # set :port, 80 if Sinatra::Base.environment == 'production'
   helpers RadicalUtils
   helpers BuilderUtils
+  helpers Sinatra::UrlForHelper
 
   get '/' do
     'TODO!'
