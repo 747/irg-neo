@@ -11,12 +11,17 @@ html lang='ja'
 
     == slim :_notification
 
+    - if @editing
+      #inedition.text-center.bg-error data-edit=(@editing[:short_name])
+        ' Now Editing:
+        b => @editing[:title]
+        span = "(#{@editing[:short_name]})"
     - if @motions
       #charinfo.navbar.bg-secondary
         #prev.navbar-section
           - if @prevsn
             p: a href==@prevsn == "&#x21E6; #{@prevsn}"
-        #current.navbar-center: p.text-center
+        #current.navbar-center{ data-code=@charcode }: p.text-center
           = @charsn || @set_name
           br
           span.text-bold = @charcode
@@ -29,24 +34,37 @@ html lang='ja'
         - @motions.each_with_index do |e, index|
           - m, u = e # [Hash, True/False]
           - mo, doc = m[:motion], m[:document]
+          - s = @sorter[index]
+          - dummy = true == s || false == s
+          - states = {live: 'success', postponed: 'warning', withdrawn: 'error'}
           / get undeclared properties -- isn't there a better way?
-          - misc = mo.instance_variable_get(:@attributes).except(*mo.declared_properties.registered_properties.keys.map(&:to_s), 'uuid')
-          ul.column.motion.menu id=mo.id class=('unified bg-secondary' unless u) data-date=(doc.published_on || doc.assigned_on)
+          - misc = mo.instance_variable_get(:@attributes).except(*mo.declared_properties.registered_properties.keys.map(&:to_s), 'uuid') unless dummy
+          ul.column.menu{
+            id=(mo.id unless dummy)
+            class=([('bg-dark editor' if dummy), true == s ? 'motion-half' : 'motion', ('unified bg-secondary' unless u)].compact.join(' '))
+            data-date=doc.date }
             li.menu-item: .tile.tile-centered.motion-header: .tile-content
-              .tile-title.text-bold.text-primary.text-ellipsis title=doc.title
-                = doc.title
-              - if doc.doc_id
+              .tile-title.text-bold.text-ellipsis{
+                class=(dummy ? 'text-secondary' : 'text-primary')
+                title=(doc.title unless true == s) }
+                = true == s ? 'Edit' : doc.title
+              - if doc.short_name
                 .tile-subtitle
-                  = "(#{doc.doc_id})"
+                  = "(#{doc.short_name})"
+            li.menu-item: .tile.tile-centered.motion-header
+              - if dummy
+                button#push.btn.btn-primary Save
+              - else
+                button.set-pivot.btn 0
             li.menu-item.comparable data-value=m[:source]
               = m[:source]
-            li.menu-item.comparable[data-value=m[:glyph].name]: .tile.tile-centered.motion-header
-              - path = m[:glyph].path || "#{doc.doc_id}/#{m[:glyph].name}"
+            li.menu-item.comparable[data-value=m[:glyph]&.name]: .tile.tile-centered.motion-header
+              - path = m[:glyph]&.path || "#{doc.short_name}/#{m[:glyph]&.name}"
               img.glyph.tile-icon src==url("/images/#{path}") title="glyph"
               .tile-content: p.tile-title
                 = File.basename(path)
             li.menu-item: .tile.tile-centered.motion-header
-              - m[:evidences].each do |ev|
+              - m[:evidences]&.each do |ev|
                 img.evidence.tile-icon.tooltip{
                   data-tooltip=ev.path
                   src==url("/images/#{ev.path}")
@@ -56,23 +74,44 @@ html lang='ja'
                 - if @motions[index+1] && !@motions[index+1][1]
                   button.toggle-unified.btn
               / TODO: the unified of the unified
-            li.menu-item.comparable data-value=mo.rad
-              = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
-            - [mo.sc, mo.fs, mo.ts, mo.ids, mo.similar, mo.total].each do |pt|
-              li.menu-item.comparable.text-ellipsis data-value=pt title=pt
-                = pt
+            li.menu-item.comparable data-value=(mo.rad unless dummy)
+              - if dummy
+                select.mfield.form-select.select-sm.text-primary name="rad"
+                  option value="" Select...
+                  - rads.each do |rk, rv|
+                    option value=rk #{rv[0]} (#{rv[1]} #{rk})
+              - else
+                = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
+            - [:sc, :fs, :ts, :ids, :similar, :total].each do |pt|
+              li.menu-item.comparable.text-ellipsis{
+                data-value=(mo[pt] unless dummy)
+                title=(mo[pt] unless dummy) }
+                - if dummy
+                  input.mfield.form-input.input-sm type="text" name=pt
+                - else
+                  = mo[pt]
             li.menu-item.text-bold{
-              class=("text-" << {live: 'success', postponed: 'warning', withdrawn: 'error'}[mo.status])
-              data-value=mo.status }
-              = mo.status
-            li.menu-item.variable-comment.comparable data-value=mo.comment
-              = mo.comment
-            - misc.each do |name, val|
+              data-value=(mo.status unless dummy) }
+              - if dummy
+                select.mfield.form-select.select-sm.text-primary name="status"
+                  option value="" Select...
+                  - states.each do |sk, sv|
+                    option value=sk = sk
+              - else
+                span class="text-#{states[mo.status]}" = mo.status
+            li.menu-item.variable-comment.comparable{
+              data-value=(mo.comment unless dummy) }
+              - if dummy
+                textarea.mfield.form-input name="comment" rows=3
+              - else
+                = mo.comment
+            - misc&.each do |name, val|
               li.menu-item.variable-others: dl
                   dt = name
                   dd = val
         ul#caption.column.menu.bg-primary.text-right
           li.menu-item: .tile.tile-centered.motion-header: .tile-content File
+          li.menu-item: .tile.tile-centered.motion-header: .tile-content Operation
           li.menu-item Source
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Glyph
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Evidences

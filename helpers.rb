@@ -57,10 +57,11 @@ module BuilderUtils
         glyph: :g,
         document: :d,
         unified: 'CASE WHEN um IS NOT NULL THEN collect({motion: um, source: uc.code, glyph: ug, evidences: uee, document: d}) ELSE NULL END',
-        evidences: 'collect(e)'
+        evidences: 'collect(e)',
+        sorting: 'CASE WHEN d.published_on IS NOT NULL THEN d.published_on ELSE d.assigned_on END'
       )
       .return(:source, :motion, :glyph, :evidences, :unified, :document)
-      .order(document: [{published_on: :desc}])
+      .order('sorting DESC')
       .map { |e|
         array = [[e.to_h.except(:unified), true]]
         array.push( *( e.unified.map { |u| [u, false] if u.present? }.compact ) ) if e.unified

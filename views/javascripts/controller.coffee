@@ -4,7 +4,7 @@ Zepto ($)->
     ref = ref || 0
     sameStyle = 'rounded diff-same'
     diffStyle = 'rounded diff-unsame'
-    matrix = $('.motion:not(.unified)').map -> [$(this).children('.comparable')]
+    matrix = $('.motion:not(.unified):not(.editor)').map -> [$(this).children('.comparable')]
     matrix.each (i, e)->
       $(e).each (ii, ee)->
         ez = $(ee)
@@ -37,6 +37,28 @@ Zepto ($)->
       return 0 if rows.length is 0
       bottom = rows.eq(-1).offset()
       bottom.top + bottom.height - rows.eq(0).offset().top
+
+  # editing mode
+  colors = 'bg-dark bg-success bg-error'
+  $('#push').click ->
+    [doc, char] = [$('#inedition').data('edit'), $('#current').data('code')]
+    entry = $(this).closest('.column')
+    fields = $('.mfield').reduce (m, field)->
+        m[$(field).attr('name')] = $(field).val()
+        m
+      , {}
+    $.ajax
+      type: 'POST'
+      url: "/edit-motion/#{doc}/#{char}"
+      data: JSON.stringify props: fields
+      contentType: 'application/json'
+      dataType: 'json'
+      success: (data)->
+        entry.removeClass(colors).addClass('bg-success')
+      error: (xhr, type)->
+        entry.removeClass(colors).addClass('bg-error')
+  $('.mfield').change ->
+    $(this).closest('.column').removeClass(colors).addClass('bg-dark')
 
   # diff coloring
   motionDiff()

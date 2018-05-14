@@ -5,6 +5,7 @@ require 'active_support'
 require 'active_support/core_ext'
 require 'sinatra/reloader' #if development?
 require 'sinatra/multi_route'
+require 'json'
 
 class IRGT < Sinatra::Base
   register Sinatra::MultiRoute
@@ -53,7 +54,7 @@ class IRGT < Sinatra::Base
 
           target = params[:docid].present? ? Memorandum.find_by(short_name: params[:docid]) : nil
           if target
-            @editing = target.attributes.slice(:uuid, :short_name, :title)
+            @editing = target.instance_variable_get(:@attributes).slice('uuid', 'short_name', 'title').symbolize_keys
           elsif params[:docid]
             @note << [:invalid_doc, params[:docid]]
           end
@@ -74,9 +75,51 @@ class IRGT < Sinatra::Base
           @note << [:invalid_code, @charcode]
         end
       end
+
+      order_index = @motions.map { |m| m[0][:document] } if @motions
+      @sorter = order_index.map { |i| i.date }
+      # insert the dummy entry for editing mode
+      if target
+        if (found = order_index.index(target))
+          @sorter.insert found, true
+        else
+          found = @sorter.index { |s| s <= target.date } || -1 # find the latest entry before target
+          @sorter.insert found, false
+        end
+        
+        @motions.insert found, [{document: target}, true]
+      end
+
     else
       @note << [:invalid_set, params[:set]]
     end
+
+    # TODO: put on some Decorator whenever convenient...
     slim :carousel
+  end
+
+  post '/edit-motion/:docid/:charid' do
+    begin
+      fields = JSON.parse request.body.read
+      the_doc = Memorandum.find_by! short_name: params[:docid]
+      the_char = Character.find_by! code: params[:charid]
+      cands = the_doc.motions(:m).char.match_to(the_char).pluck(:m)
+      
+      target =
+        if cands.blank?
+          CharMotion.new document: the_doc, char: the_char
+        elsif cands.size == 1
+          cands.first
+        else
+          raise
+        end
+      
+      fields['props'].each { |k, v| target[k.intern] = v unless v.blank? }
+      target.save!
+      status 200
+    rescue
+      status 502
+      body JSON.dump(doc: the_doc, char: the_char, cands: cands, fields: fields, t: target)
+    end
   end
 end

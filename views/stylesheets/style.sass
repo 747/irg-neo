@@ -1,5 +1,6 @@
 $caption-width: 100px
 $caption-max: 120px
+$tile-width: 240px
 
 $light-success: #c5efca // Spectre success-color 40% lighten
 $light-warning: #fff1cc // Spectre warning-color 40% lighten
@@ -34,8 +35,12 @@ html, body
     justify-content: flex-end
 
 .motion
-  width: 240px
-  max-width: 240px
+  width: $tile-width
+  max-width: $tile-width
+
+.motion-half
+  width: $tile-width / 2
+  max-width: $tile-width / 2
 
 #caption.menu
   min-width: $caption-width /* overriding spectre */
@@ -48,6 +53,9 @@ html, body
 
 .menu-item
   min-height: 25px
+
+  input.input-sm, select.select-sm
+    height: 24px
 
 .glyph, .evidence
   height: 100%
