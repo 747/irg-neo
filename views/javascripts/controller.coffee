@@ -1,16 +1,18 @@
 Zepto ($)->
 
   motionDiff = (ref)->
-    ref = ref || 0
     sameStyle = 'rounded diff-same'
     diffStyle = 'rounded diff-unsame'
-    matrix = $('.motion:not(.unified):not(.editor)').map -> [$(this).children('.comparable')]
+    targets = $('.motion:not(.unified):not(.editor)')
+    names = targets.map -> $(this).attr('id')
+    matrix = targets.map -> [$(this).children('.comparable')] # flatten-proof
+    pivot = Math.max names.indexOf(ref), 0 # 0 if not found
     matrix.each (i, e)->
       $(e).each (ii, ee)->
         ez = $(ee)
-        if i is ref
+        if i == pivot
           ez.removeClass "#{sameStyle} #{diffStyle}"
-        else if ez.data('value') == $(matrix[ref][ii]).data('value')
+        else if ez.data('value') == $(matrix[pivot][ii]).data('value')
           ez.removeClass(diffStyle).addClass(sameStyle)
         else
           ez.removeClass(sameStyle).addClass(diffStyle)
@@ -40,7 +42,7 @@ Zepto ($)->
 
   # editing mode
   colors = 'bg-dark bg-success bg-error'
-  $('#push').click ->
+  $('#push').on 'click', ->
     [doc, char] = [$('#inedition').data('edit'), $('#current').data('code')]
     entry = $(this).closest('.column')
     fields = $('.mfield').reduce (m, field)->
@@ -62,4 +64,6 @@ Zepto ($)->
 
   # diff coloring
   motionDiff()
+  $('.set-pivot').on 'click', ->
+    motionDiff $(this).closest('.column').attr('id')
   
