@@ -100,6 +100,7 @@ html lang='ja'
               - else
                 span class="text-#{states[mo.status]}" = mo.status
             li.menu-item.variable-comment.comparable{
+              class=('marked' unless dummy)
               data-value=(mo.comment unless dummy) }
               - if dummy
                 textarea.mfield.form-input name="comment" rows=3

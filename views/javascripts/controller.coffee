@@ -66,4 +66,12 @@ Zepto ($)->
   motionDiff()
   $('.set-pivot').on 'click', ->
     motionDiff $(this).closest('.column').attr('id')
+
+  # markdown compilation
+  marked.setOptions
+    breaks: true
+    gfm: true
+    tables: true
+  $('.marked').html (i, t)->
+    DOMPurify.sanitize marked t
   
