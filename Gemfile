@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 ruby '~> 2.4'
 
 gem 'rake'
-gem 'sinatra'
-gem 'sinatra-contrib'
+gem 'sinatra', '>= 2.0.1'
+gem 'sinatra-contrib', '>= 2.0.1'
 gem 'activesupport'
 gem 'tobias-sinatra-url-for' # building subhost absolute path
 

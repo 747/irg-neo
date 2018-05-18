@@ -170,8 +170,8 @@ DEPENDENCIES
   roo
   roo-xls
   sass
-  sinatra
-  sinatra-contrib
+  sinatra (>= 2.0.1)
+  sinatra-contrib (>= 2.0.1)
   slim
   tobias-sinatra-url-for
 
