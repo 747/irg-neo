@@ -1,0 +1,38 @@
+doctype 5
+html lang='en'
+  head
+    == slim :_include
+    title = "Document browser: #{@doc[:short_name]}"
+
+  body
+    == slim :_heading
+
+    == slim :_notification
+
+    - if @doc
+      .mx-2
+        h2.h5.text-primary = @doc[:short_name]
+        h3.h2 = @doc[:title]
+        p.my-2
+          span.d-inline-block.mx-2 = @doc[:assigned_on].strftime('%F')
+          span.d-inline-block.text-gray = '/'
+          span.d-inline-block.mx-2 = @doc[:published_on].strftime('%F')
+
+      hr.divider
+
+      .container
+      - [:motions].each do |r|
+        .bg-secondary: h4 = r.to_s.capitalize
+        - result = @doc[r]
+        - if result.empty?
+          p No #{r} found.
+        - else
+          .gallery.columns
+          - result.each do |col|
+            - path = col[:glyph]&.path || "#{@doc.short_name}/#{col[:glyph]&.name}"
+            - char = col[:char]
+            a.column href==url_for("/source/#{char.series[0]&.short_name}/#{char.code}")
+              img.tooltip{
+                src==url_for("/images/#{path}")
+                alt=col[:id]
+                data-tooltip=char.code }

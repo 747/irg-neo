@@ -100,6 +100,19 @@ class IRGT < Sinatra::Base
     slim :carousel
   end
 
+  get '/docs/:docid' do
+    # とりあえず
+    @note = []
+    doc = Memorandum.find_by short_name: params[:docid]
+    if doc
+      @doc = doc
+    else
+      @note << [:invalid_doc, params[:docid]]
+    end
+
+    slim :gallery
+  end
+
   post '/edit-motion/:docid/:charid' do
     begin
       fields = JSON.parse request.body.read
