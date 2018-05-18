@@ -31,8 +31,8 @@ html lang='en'
           - result.each do |col|
             - path = col[:glyph]&.path || "#{@doc.short_name}/#{col[:glyph]&.name}"
             - char = col[:char]
-            a.thumb.column href==url_for("/source/#{char.series[0]&.short_name}/#{char.code}")
-              img.tooltip{
+            a.column href==url_for("/source/#{char.series[0]&.short_name}/#{char.code}")
+              img.thumb.tooltip{
                 src==url_for("/images/#{path}")
                 alt=col[:id]
                 data-tooltip=char.code }
