@@ -17,6 +17,8 @@ output.txt
 # neo4j server credentials
 /login.rb
 
+.byebug_history
+
 # Used by dotenv library to load environment variables.
 # .env
 
