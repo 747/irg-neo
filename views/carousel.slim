@@ -1,5 +1,5 @@
 doctype 5
-html lang='ja'
+html lang='en'
   head
     == slim :_include
 
@@ -60,14 +60,14 @@ html lang='ja'
               = m[:source]
             li.menu-item.comparable[data-value=m[:glyph]&.name]: .tile.tile-centered.motion-header
               - path = m[:glyph]&.path || "#{doc.short_name}/#{m[:glyph]&.name}"
-              img.glyph.tile-icon src==url("/images/#{path}") title="glyph"
+              img.glyph.tile-icon src==url_for("/images/#{path}") title="glyph"
               .tile-content: p.tile-title
                 = File.basename(path)
             li.menu-item: .tile.tile-centered.motion-header
               - m[:evidences]&.each do |ev|
                 img.evidence.tile-icon.tooltip{
                   data-tooltip=ev.path
-                  src==url("/images/#{ev.path}")
+                  src==url_for("/images/#{ev.path}")
                   title="evidence" }
             li.menu-item: .tile.tile-centered.motion-header
               - if u
