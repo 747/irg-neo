@@ -129,7 +129,26 @@ class IRGT < Sinatra::Base
           raise
         end
       
-      fields['props'].each { |k, v| target[k.intern] = v unless v.blank? }
+      fields['props'].each { |k, v|
+        case k
+        when 'unified'
+          target.unifiers = v.split(',').map { |vv|
+            u = vv.strip
+            case u
+            when /^\d+$/
+              # TODO
+              # Series.all.where(short_name: fields['ref']['set']).chars.where(migrated: ).rel_where(serial: u.to_i)
+            when /^U-(\h{8})$/
+              cp = 4.times.reduce($1) { |m, _| m = m[1..-1] if m[0] == '0' }
+              Character.find_by! code: "U+#{cp}"
+            else
+              Character.find_by! code: u
+            end
+          }
+        else
+          target[k.intern] = v unless v.blank?
+        end
+      }
       target.save!
       status 200
     rescue

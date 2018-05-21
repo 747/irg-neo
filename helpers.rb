@@ -50,21 +50,24 @@ module BuilderUtils
       .optional_match('(um)-[:HAS_GLYPH]->(ug)').break
       .optional_match('(um)-[:HAS_EVIDENCE]->(ue)').break
       .optional_match('(um)-[:ON]->(uc)').break # all optional matches must be independent
-      .with(:c, :m, :g, :d, :e, :um, :uc, :ug, uee: 'collect(ue)')
+      .optional_match('(m)-[:UNIFIED_BY]->(u2:Character)-[u2r:CONSTITUTES]->(u2s:Series)')
+      .where("EXISTS(u2r.serial) OR u2s.short_name = 'UC'").break # 'UC' -> Unicode
+      .with(:c, :m, :g, :d, :e, :um, :uc, :ug, :u2, :u2r, :u2s, uee: 'collect(ue)')
       .with(
         source: 'c.code',
         motion: :m,
         glyph: :g,
         document: :d,
-        unified: 'CASE WHEN um IS NOT NULL THEN collect({motion: um, source: uc.code, glyph: ug, evidences: uee, document: d}) ELSE NULL END',
+        unifies: 'CASE WHEN um IS NOT NULL THEN collect({motion: um, source: uc.code, glyph: ug, evidences: uee, document: d}) ELSE NULL END',
+        unified: 'CASE WHEN u2 IS NOT NULL THEN collect({code: u2.code, serial: u2r.serial, series: u2s.short_name}) ELSE NULL END',
         evidences: 'collect(e)',
         sorting: 'CASE WHEN d.published_on IS NOT NULL THEN d.published_on ELSE d.assigned_on END'
       )
-      .return(:source, :motion, :glyph, :evidences, :unified, :document)
+      .return(:source, :motion, :glyph, :evidences, :unifies, :unified, :document)
       .order('sorting DESC')
       .map { |e|
-        array = [[e.to_h.except(:unified), true]]
-        array.push( *( e.unified.map { |u| [u, false] if u.present? }.compact ) ) if e.unified
+        array = [[e.to_h.except(:unifies), true]]
+        array.push( *( e.unifies.map { |u| [u, false] if u.present? }.compact ) ) if e.unifies
         array
       }
       .flatten(1)
