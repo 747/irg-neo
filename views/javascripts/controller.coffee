@@ -3,11 +3,14 @@ Zepto ($)->
   motionDiff = (ref)->
     sameStyle = 'rounded diff-same'
     diffStyle = 'rounded diff-unsame'
-    targets = $('.motion:not(.unified):not(.editor)')
+    activeStyle = 'btn-primary'
+    targets = $('.motion:not(.unified):not(#editor)')
     names = targets.map -> $(this).attr('id')
     matrix = targets.map -> [$(this).children('.comparable')] # flatten-proof
     pivot = Math.max names.indexOf(ref), 0 # 0 if not found
     matrix.each (i, e)->
+      method = if i == pivot then 'addClass' else 'removeClass'
+      $(e).closest('column').find('.set-pivot')[method]('btn-primary')
       $(e).each (ii, ee)->
         ez = $(ee)
         if i == pivot
@@ -19,8 +22,7 @@ Zepto ($)->
 
   # unification toggler
   $('.unified').hide()
-  $('.toggle-unified').addClass('btn-primary').text('Show')
-  .on 'click', ->
+  $('.toggle-unified').on 'click', ->
     # nextUntil equivalent
     n = $(this).closest('.motion').next()
     while n.is('.unified')
@@ -28,7 +30,8 @@ Zepto ($)->
       n = n.next()
       break if n.length is 0
 
-    $(this).toggleClass('btn-primary').text if $(this).hasClass('btn-primary') then 'Show' else 'Hide'
+    $(this).toggleClass('btn-primary')
+    .find('.icon').toggleClass('icon-resize-horiz icon-arrow-right')
 
   # align column heights
   $('.variable-comment').height (i, o)->
@@ -43,7 +46,9 @@ Zepto ($)->
   # editing mode
   colors = 'bg-dark bg-success bg-error'
   $('#push').on 'click', ->
-    [doc, char] = [$('#inedition').data('edit'), $('#current').data('code')]
+    doc = $('#inedition').data('edit')
+    set = $('#current').data('set')
+    char = $('#current').data('code')
     entry = $(this).closest('.column')
     fields = $('.mfield').reduce (m, field)->
         m[$(field).attr('name')] = $(field).val()
@@ -52,7 +57,10 @@ Zepto ($)->
     $.ajax
       type: 'POST'
       url: "/edit-motion/#{doc}/#{char}"
-      data: JSON.stringify props: fields
+      data: JSON.stringify
+        props: fields
+        ref:
+          set: set
       contentType: 'application/json'
       dataType: 'json'
       success: (data)->
@@ -61,6 +69,14 @@ Zepto ($)->
         entry.removeClass(colors).addClass('bg-error')
   $('.mfield').change ->
     $(this).closest('.column').removeClass(colors).addClass('bg-dark')
+
+  $('.mirror').on 'click', ->
+    origin = $(this).closest('.column')
+    dest = $('#editor')
+    dest.find('[name]').each (i, t)->
+      item = $(t)
+      name = item.attr 'name'
+      item.val origin.find(".field-#{name}").data('value')
 
   # diff coloring
   motionDiff()
@@ -72,6 +88,7 @@ Zepto ($)->
     breaks: true
     gfm: true
     tables: true
+    smartypants: true
   $('.marked').html (i, t)->
     DOMPurify.sanitize marked t
   

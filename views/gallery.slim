@@ -15,8 +15,9 @@ html lang='en'
         h3.h2 = @doc[:title]
         p.my-2
           span.d-inline-block.mx-2 = @doc[:assigned_on].strftime('%F')
-          span.d-inline-block.text-gray = '/'
-          span.d-inline-block.mx-2 = @doc[:published_on].strftime('%F')
+          - if @doc[:published_on]
+            span.d-inline-block.text-gray = '/'
+            span.d-inline-block.mx-2 = @doc[:published_on].strftime('%F')
 
       hr.divider
 

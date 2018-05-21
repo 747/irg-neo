@@ -21,10 +21,13 @@ html lang='en'
         #prev.navbar-section
           - if @prevsn
             p: a href==@prevsn == "&#x21E6; #{@prevsn}"
-        #current.navbar-center{ data-code=@charcode }: p.text-center
-          = @charsn || @set_name
-          br
-          span.text-bold = @charcode
+        #current.navbar-center{
+          data-set=@set
+          data-code=@charcode }
+          p.text-center
+            = @charsn ? "#{@set}/#{@charsn}" : @set_name
+            br
+            span.text-bold = @charcode
         #next.navbar-section
           - if @nextsn
             p: a href==@nextsn == "#{@nextsn} &#x21E8;"
@@ -40,8 +43,8 @@ html lang='en'
           / get undeclared properties -- isn't there a better way?
           - misc = mo.instance_variable_get(:@attributes).except(*mo.declared_properties.registered_properties.keys.map(&:to_s), 'uuid') unless dummy
           ul.column.menu{
-            id=(mo.id unless dummy)
-            class=([('bg-dark editor' if dummy), true == s ? 'motion-half' : 'motion', ('unified bg-secondary' unless u)].compact.join(' '))
+            id=(dummy ? 'editor' : mo.id)
+            class=([('bg-dark' if dummy), true == s ? 'motion-half' : 'motion', ('unified bg-secondary' unless u)].compact.join(' '))
             data-date=doc.date }
             li.menu-item: .tile.tile-centered.motion-header: .tile-content
               .tile-title.text-bold.text-ellipsis{
@@ -52,45 +55,31 @@ html lang='en'
                 .tile-subtitle
                   = "(#{doc.short_name})"
             li.menu-item: .tile.tile-centered.motion-header
+              - if u
+                - if @motions[index+1] && !@motions[index+1][1]
+                  button.toggle-unified.btn.btn-action: i.icon.icon-resize-horiz
+              / TODO: the unified of the unified
               - if dummy
-                button#push.btn.btn-primary Save
+                button#push.btn.btn-action: i.icon.icon-check
               - else
-                button.set-pivot.btn 0
-            li.menu-item.comparable data-value=m[:source]
-              = m[:source]
-            li.menu-item.comparable[data-value=m[:glyph]&.name]: .tile.tile-centered.motion-header
+                - if u
+                  button.set-pivot.btn.btn-action: i.icon.icon-caret
+                - if @editing
+                  button.mirror.btn.btn-action: i.icon.icon-share
+            li.menu-item.comparable.field-source data-value=m[:source]
+              = dummy ? @charcode : m[:source]
+            li.menu-item.comparable.field-glyph[data-value=m[:glyph]&.name]: .tile.tile-centered.motion-header
               - path = m[:glyph]&.path || "#{doc.short_name}/#{m[:glyph]&.name}"
               img.glyph.tile-icon src==url_for("/images/#{path}") title="glyph"
               .tile-content: p.tile-title
                 = File.basename(path)
-            li.menu-item: .tile.tile-centered.motion-header
+            li.menu-item.field-evidence: .tile.tile-centered.motion-header
               - m[:evidences]&.each do |ev|
                 img.evidence.tile-icon.tooltip{
                   data-tooltip=ev.path
                   src==url_for("/images/#{ev.path}")
                   title="evidence" }
-            li.menu-item: .tile.tile-centered.motion-header
-              - if u
-                - if @motions[index+1] && !@motions[index+1][1]
-                  button.toggle-unified.btn
-              / TODO: the unified of the unified
-            li.menu-item.comparable data-value=(mo.rad unless dummy)
-              - if dummy
-                select.mfield.form-select.select-sm.text-primary name="rad"
-                  option value="" Select...
-                  - rads.each do |rk, rv|
-                    option value=rk #{rv[0]} (#{rv[1]} #{rk})
-              - else
-                = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
-            - [:sc, :fs, :ts, :ids, :similar, :total].each do |pt|
-              li.menu-item.comparable.text-ellipsis{
-                data-value=(mo[pt] unless dummy)
-                title=(mo[pt] unless dummy) }
-                - if dummy
-                  input.mfield.form-input.input-sm type="text" name=pt
-                - else
-                  = mo[pt]
-            li.menu-item.text-bold{
+            li.menu-item.field-status.text-bold{
               data-value=(mo.status unless dummy) }
               - if dummy
                 select.mfield.form-select.select-sm.text-primary name="status"
@@ -99,7 +88,33 @@ html lang='en'
                     option value=sk = sk
               - else
                 span class="text-#{states[mo.status]}" = mo.status
-            li.menu-item.variable-comment.comparable{
+            li.menu-item.comparable.field-unified{
+              data-value=(m[:unified]&.map{ |e| e[:code] }&.sort&.join(',') unless dummy) }
+              .tile.tile-centered.motion-header
+                - if dummy
+                  input.mfield.form-input.input-sm type="text" name="unified"
+                - else
+                  - m[:unified]&.each do |u2|
+                    - link = u2[:serial] ? "/browse/#{u2[:series]}/#{u2[:serial]}" : "/source/#{u2[:series]}/#{u2[:code]}"
+                    a.label.label-secondary href=link target='_blank' = u2[:code]
+            li.menu-item.comparable.field-rad data-value=(mo.rad unless dummy)
+              - if dummy
+                select.mfield.form-select.select-sm.text-primary name="rad"
+                  option value="" Select...
+                  - rads.each do |rk, rv|
+                    option value=rk #{rv[0]} (#{rv[1]} #{rk})
+              - elsif mo.rad
+                = "Rad. #{lookup_han(mo.rad)} (#{lookup_kx(mo.rad)} #{mo.rad/10.0})"
+            - [:sc, :fs, :ts, :ids, :similar, :total].each do |pt|
+              li.menu-item.comparable.text-ellipsis{
+                class="field-#{pt}"
+                data-value=(mo[pt] unless dummy)
+                title=(mo[pt] unless dummy) }
+                - if dummy
+                  input.mfield.form-input.input-sm type="text" name=pt
+                - else
+                  = mo[pt]
+            li.menu-item.variable-comment.field-comment.comparable{
               class=('marked' unless dummy)
               data-value=(mo.comment unless dummy) }
               - if dummy
@@ -116,7 +131,8 @@ html lang='en'
           li.menu-item Source
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Glyph
           li.menu-item: .tile.tile-centered.motion-header: .tile-content Evidences
-          li.menu-item: .tile.tile-centered.motion-header: .tile-content Unifies...
+          li.menu-item Status
+          li.menu-item: .tile.tile-centered.motion-header: .tile-content Unified to
           li.menu-item Radical
           li.menu-item SC
           li.menu-item FS
@@ -124,6 +140,5 @@ html lang='en'
           li.menu-item IDS
           li.menu-item Similar
           li.menu-item Total
-          li.menu-item Status
           li.menu-item.variable-comment Comment
           li.menu-item.variable-others Other Attributes
