@@ -33,16 +33,6 @@ Zepto ($)->
     $(this).toggleClass('btn-primary')
     .find('.icon').toggleClass('icon-resize-horiz icon-arrow-right')
 
-  # align column heights
-  $('.variable-comment').height (i, o)->
-    Math.max.apply null, $('.motion .variable-comment').map -> $(this).height()
-  $('#caption .variable-others').height (i, o)->
-    Math.max.apply null, $('.motion').map ->
-      rows = $(this).children('.variable-others')
-      return 0 if rows.length is 0
-      bottom = rows.eq(-1).offset()
-      bottom.top + bottom.height - rows.eq(0).offset().top
-
   # editing mode
   colors = 'bg-dark bg-success bg-error'
   $('#push').on 'click', ->
@@ -91,4 +81,13 @@ Zepto ($)->
     smartypants: true
   $('.marked').html (i, t)->
     DOMPurify.sanitize marked t
-  
+
+  # align column heights (according to final calculation)
+  $('.variable-comment').height (i, o)->
+    Math.max.apply null, $('.motion .variable-comment').map -> $(this).height()
+  $('#caption .variable-others').height (i, o)->
+    Math.max.apply null, $('.motion').map ->
+      rows = $(this).children('.variable-others')
+      return 0 if rows.length is 0
+      bottom = rows.eq(-1).offset()
+      bottom.top + bottom.height - rows.eq(0).offset().top
