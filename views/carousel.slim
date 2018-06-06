@@ -4,7 +4,7 @@ html lang='en'
     == slim :_include
 
     - ident = @charsn ? "##{@charsn}" : @charcode
-    title = "Character browser: #{ident} of #{@set}"
+    title = "Character #{@editing ? 'editor' : 'browser'}: #{ident} of #{@set}"
 
   body
     == slim :_heading
