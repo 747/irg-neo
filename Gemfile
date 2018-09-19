@@ -7,7 +7,8 @@ gem 'sinatra-contrib', '>= 2.0.2'
 gem 'activesupport'
 gem 'tobias-sinatra-url-for' # building subhost absolute path
 
-gem 'sass'
+# gem 'sass'
+gem 'sassc'
 gem 'slim'
 gem 'coffee-script'
 
