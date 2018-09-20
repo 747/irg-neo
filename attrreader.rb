@@ -13,7 +13,8 @@ require 'set'
 abort("Needs 2 arguments: DOCDEFPATH BOOKPATH") if 2.times.reduce(false) { |m, a| m ||= ARGV[a].blank? }
 STDOUT.sync = true
 
-docdef = YAML.load_file(ARGV[0]).deep_symbolize_keys[:document]
+docyml = YAML.load_file(ARGV[0]).deep_symbolize_keys
+docdef = docyml[:document]
 config = YAML.load_file( Pathname(ARGV[0]).dirname + "#{docdef[:format]}.yml" ).deep_symbolize_keys
 c = config[:constants]
 spr = Roo::Spreadsheet.open ARGV[1]
@@ -39,9 +40,23 @@ end
 doc = Document.find_or_create_by!(docdef.slice(:doc_id)) do |d|
   set_attr[d, docdef.slice(:title, :assigned_on, :published_on)]
 end
+forced = docyml[:override]
 uc_latest = Series.find_by!(short_name: 'UC').chars.motions.document.order(published_on: :desc).first
+none_char = Character.find_or_create_by! code: '$NONE'
+none_glyph = Glyph.find_or_create_by!(name: '$NONE') { |g| g[:filetype] = 'none' }
+none_evid = Evidence.find_or_create_by!(name: '$NONE') { |e| e[:filetype] = 'none' }
 prefixes = c[:prefixes]
 usources = %w[G H J KP K M T U V]
+if c[:origins]
+  pf = prefixes.map { |f| f.is_a?(Array) ? f.first : f }
+  glyph_origin = {}
+  evid_origin = {}
+  [:glyph, :evidence].each { |k|
+    h = k == :glyph ? glyph_origin : evid_origin
+    ok = c[:origins][k] || {}
+    pf.each { |x| h[x] = ok[x] ? Document.find_by!(doc_id: ok[x]) : doc }
+  }
+end
 
 # parse spreadsheets
 warnings = []
@@ -260,7 +275,11 @@ if prefixes # no source prefixes, no WS document
     next unless ch
     print "\rresolving unification -- ##{chi}"
     exist = prefixes.map { |pf| [pf].flatten.reduce(true) { |m, e| m && ch[e] } }
-    warnh[chi, "Has uncleared duplicate sources! #{exist.map.with_index { |e, i| e ? prefixes[i] : nil }.compact.join(', ')}"] if exist.compact.size > 1
+    if exist.compact.size > 1
+      warnh[chi, "Has uncleared duplicate sources! #{exist.map.with_index { |e, i| e ? prefixes[i] : nil }.compact.join(', ')}"]
+    else
+      ch[:body] = exist.first
+    end
     
     prefixes.each { |pf| [pf].flatten.each { |e|
       ch.update( ch[e] || {} )
@@ -271,6 +290,13 @@ end
 
 open(Pathname('./output/check') + "#{Time.now.strftime($TIMESTAMP)}_#{s[:short_name]}_#{docdef[:doc_id]}.txt", "w:utf-8") do |w|
   warnings.each { |wa| w.puts wa }
+end
+
+# force to override properties
+if forced
+  chars.each { |ch|
+    forced[ch[:code]].each { |k, v| ch[k] = v } if forced.include?(ch[:code])
+  }
 end
 
 # update!
@@ -286,7 +312,9 @@ else
   puts "\r#{characters.size} existing chars found"
 
   print "retrieving glyphs..."
-  glyphs = Glyph.all.where(name: known_glyphs.to_a).map { |e| [e[:name], e] }.to_h
+  # TODO name clash between different IRGN?
+  glyph_cond = {name: known_glyphs.to_a, document: glyph_origin ? glyph_origin.values : doc}
+  glyphs = Glyph.all.where(glyph_cond).map { |e| [e[:name], e] }.to_h
   puts "\r#{glyphs.size} existing glyphs found"
   added_glyphs = known_glyphs - glyphs.keys.to_set
   TransactionalExec.new(1000) do |gl, i|
@@ -296,7 +324,9 @@ else
   puts "#{added_glyphs.size} new glyphs added"
 
   print "retrieving evidences..."
-  evids = Evidence.all.where(name: known_evids.to_a).map { |e| [e[:name], e] }.to_h
+  # TODO name clash between different IRGN?
+  evid_cond = {name: known_evids.to_a, document: evid_origin ? evid_origin.values : doc}
+  evids = Evidence.all.where(evid_cond).map { |e| [e[:name], e] }.to_h
   puts "\r#{evids.size} existing evidences found"
   added_evids = known_evids - evids.keys.to_set
   TransactionalExec.new(1000) do |ev, i|
@@ -307,7 +337,9 @@ else
 
   print "cleaning up DB..."
   # めんどくさいので一旦削除
-  query = Neo4j::Core::Query.new.match("(s:Series {name: '#{set[:name]}'})--(c:Character)--(m:CharMotion)--(d:Document {doc_id: '#{doc[:doc_id]}'})").detach_delete(:m).return('count(m)')
+  query = Neo4j::Core::Query.new
+    .match("(s:Series {name: '#{set[:name]}'})--(c:Character)--(m:CharMotion)--(d:Document {doc_id: '#{doc[:doc_id]}'})")
+    .detach_delete(:m).return('count(m)')
   result = Neo4j::ActiveBase.current_session.query(query)
   existing = result.rows[0][0]
   puts "\rdeleted #{existing} motions on DB"
@@ -327,14 +359,19 @@ else
     ch.each { |prop, val|
       case prop
       when :glyph
-        gl = glyphs[val] || raise("Unknown glyph name #{val} in #{code}!")
+        none = val.empty? ? none_glyph : nil
+        gl = none || glyphs[val] || raise("Unknown glyph name #{val} in #{code}!")
         motion.glyph = gl
       when :evidence
-        evs = val.is_a?(Array) ? val.map { |e| e.is_a?(Hash) ? e : {name: e.to_s} } : [{name: val}]
-        evs.each { |v|
-          ev = evids[v[:name]] || raise("Unknown evidence name #{v[:name]} in #{code}!")
-          HasEvidence.create(motion, ev, v.except(:name))
-        }
+        if val.present?
+          evs = val.is_a?(Array) ? val.map { |e| e.is_a?(Hash) ? e : {name: e.to_s} } : [{name: val}]
+          evs.each { |v|
+            ev = evids[v[:name]] || raise("Unknown evidence me #{v[:name]} in #{code}!")
+            HasEvidence.create(motion, ev, v.except(:name))
+          }
+        else
+          motion.evidence = none_evid
+        end
       when :live, :postponed, :withdrawn
         motion.status = prop if val
       when :unified
@@ -345,6 +382,7 @@ else
             internal_refs << [chi, u[:name], u.except(:name)]
           when String
             unicode_refs << [chi, u[:name], u.except(:name)]
+          # TODO to another WS
           end
         }
         motion.status = :withdrawn
@@ -354,6 +392,7 @@ else
         motion[prop] = val.is_a?(Array) ? val.map(&:to_s) : val.to_s
       end
     }
+    motion.unifiers = none_char if ch[:unified].blank?
     sources.each { |e| char.series << e } if src
     char.save
     motion.save
