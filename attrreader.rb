@@ -42,7 +42,8 @@ doc = Document.find_or_create_by!(docdef.slice(:doc_id)) do |d|
 end
 forced = docyml[:override]
 uc_latest = Series.find_by!(short_name: 'UC').chars.motions.document.order(published_on: :desc).first
-none_char = Character.find_or_create_by! code: '$NONE'
+none_set = Series.find_or_create_by!(short_name: '$NONE') { |s| s[:name] = '(NONE)' }
+none_char = Character.find_or_create_by!(code: '$NONE') { |c| c.series = none_set }
 none_glyph = Glyph.find_or_create_by!(name: '$NONE') { |g| g[:filetype] = 'none' }
 none_evid = Evidence.find_or_create_by!(name: '$NONE') { |e| e[:filetype] = 'none' }
 prefixes = c[:prefixes]
