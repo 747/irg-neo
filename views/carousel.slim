@@ -42,7 +42,7 @@ html lang='en'
           - states = {live: 'success', postponed: 'warning', withdrawn: 'error'}
           / get undeclared properties -- isn't there a better way?
           - misc = mo.instance_variable_get(:@attributes).except(*mo.declared_properties.registered_properties.keys.map(&:to_s), 'uuid') unless dummy
-          ul.column.menu{
+          ul.column.menu.menu-selectable{
             id=(dummy ? 'editor' : mo.id)
             class=([('bg-dark' if dummy), true == s ? 'motion-half' : 'motion', ('unified bg-secondary' unless u)].compact.join(' '))
             data-date=doc.date }
@@ -57,15 +57,15 @@ html lang='en'
             li.menu-item: .tile.tile-centered.motion-header
               - if u
                 - if @motions[index+1] && !@motions[index+1][1]
-                  button.toggle-unified.btn.btn-action: i.icon.icon-resize-horiz
+                  button.toggle-unified.btn.btn-action[title='Toggle the unified']: i.icon.icon-resize-horiz
               / TODO: the unified of the unified
               - if dummy
-                button#push.btn.btn-action: i.icon.icon-check
+                button#push.btn.btn-action[title='Submit']: i.icon.icon-check
               - else
                 - if u
-                  button.set-pivot.btn.btn-action: i.icon.icon-caret
+                  button.set-pivot.btn.btn-action[title='Set as reference']: i.icon.icon-caret
                 - if @editing
-                  button.mirror.btn.btn-action: i.icon.icon-share
+                  button.mirror.btn.btn-action[title='Mirror values']: i.icon.icon-share
             li.menu-item.comparable.field-source data-value=m[:source]
               = dummy ? @charcode : m[:source]
             li.menu-item.comparable.field-glyph[data-value=m[:glyph]&.name]: .tile.tile-centered.motion-header
