@@ -21,7 +21,7 @@ class IRGT < Sinatra::Base
   end
 
   get '/images/*' do
-    redirect 'http://placehold.jp/13/a4a5a6/ededed/50x50.png?text=Image%0AComing%0ASoon'
+    redirect 'images/not_ready.png'
   end
 
   get '/site-js/*.js' do
