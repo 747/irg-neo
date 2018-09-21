@@ -106,6 +106,7 @@ class IRGT < Sinatra::Base
     doc = Memorandum.find_by short_name: params[:docid]
     if doc
       @doc = doc
+      @motions = query_motion_gallery(@doc)
     else
       @note << [:invalid_doc, params[:docid]]
     end

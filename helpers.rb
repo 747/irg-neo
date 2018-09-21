@@ -74,4 +74,21 @@ module BuilderUtils
       }
       .flatten(1)
   end
+
+  def query_motion_gallery(doc)
+    doc.motions(:m).char.query_as(:c)
+      .optional_match('(m)-[:HAS_GLYPH]->(g)').break
+      .optional_match('(c)-[cr:CONSTITUTES]->(cs:Series)').break
+      .with(
+        source: 'c.code',
+        in: 'collect({serial: cr.serial, series: cs.short_name})',
+        glyph: 'CASE WHEN g IS NOT NULL THEN g.name ELSE NULL END',
+        filetype: 'CASE WHEN g IS NOT NULL THEN g.filetype ELSE NULL END',
+        path: 'CASE WHEN g.path IS NOT NULL THEN g.path ELSE NULL END',
+        status: 'm.status'
+      )
+      .return(:source, :in, :glyph, :filetype, :path, :status)
+      .order('status ASC, source ASC')
+      .to_a.map(&:to_h)
+  end
 end

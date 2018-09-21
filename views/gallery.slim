@@ -19,21 +19,23 @@ html lang='en'
             span.d-inline-block.text-gray = '/'
             span.d-inline-block.mx-2 = @doc[:published_on].strftime('%F')
 
-      hr.divider
+      div.divider
 
       .container
       - [:motions].each do |r|
         .bg-secondary: h4 = r.to_s.capitalize
-        - result = @doc[r]
+        - result = r == :motions ? @motions : @doc[r]
         - if result.empty?
           p No #{r} found.
         - else
           .gallery.columns
+          - states = [nil, 'bg-postponed', 'bg-withdrawn']
           - result.each do |col|
-            - path = col[:glyph]&.path || "#{@doc.short_name}/#{col[:glyph]&.name}"
-            - char = col[:char]
-            a.column href==url_for("/source/#{char.series[0]&.short_name}/#{char.code}")
+            - path = col[:glyph] == '$NONE' ? "no_glyph.png" : col[:path] ? col[:path] : "#{@doc.short_name}/#{col[:glyph]}"
+            - code = col[:source]
+            - aff = col[:in][0]
+            a.column.thumb-box class=(states[col[:status]] if col[:status]) href==url_for("/source/#{aff[:series]}/#{code}")
               img.thumb.tooltip{
                 src==url_for("/images/#{path}")
-                alt=col[:id]
-                data-tooltip=char.code }
+                alt=code
+                data-tooltip=code }
