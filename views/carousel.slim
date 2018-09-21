@@ -95,7 +95,9 @@ html lang='en'
                   input.mfield.form-input.input-sm type="text" name="unified"
                 - else
                   - m[:unified]&.each do |u2|
-                    - link = u2[:serial] ? "/browse/#{u2[:series]}/#{u2[:serial]}" : "/source/#{u2[:series]}/#{u2[:code]}"
+                    / decide a representative affiliation to context
+                    - ur = u2[:in].find { |o| o[:series] == 'UC' } || u2[:in].find { |o| o[:series] == @set } || u2[:in].find { |o| !o[:serial].empty? } || u2[:in].first
+                    - link = ur[:serial] ? "/browse/#{ur[:series]}/#{ur[:serial]}" : "/source/#{ur[:series]}/#{u2[:code]}"
                     a.label.label-secondary href=link target='_blank' = u2[:code]
             li.menu-item.comparable.field-rad data-value=(mo.rad unless dummy)
               - if dummy
