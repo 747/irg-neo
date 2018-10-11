@@ -34,8 +34,8 @@ html lang='en'
                 td = d.doc_id
                 td: a href="/doc/#{d.doc_id}" = d.title
                 td
-                td = d.assigned_on
-                td = d.published_on
+                td = d.assigned_on.strftime '%F %Z'
+                td = d.published_on.strftime '%F %Z'
 
     - if @mems
       div.divider
@@ -55,4 +55,4 @@ html lang='en'
                 td = m.short_name
                 td: a href="/doc/#{m.short_name}" = m.title
                 td
-                td = m.assigned_on
+                td = m.assigned_on.strftime '%F %Z'
