@@ -1,0 +1,58 @@
+doctype 5
+html lang='en'
+  head
+    == slim :_include
+    title Repository
+
+  body
+    == slim :_heading
+
+    == slim :_notification
+
+    .mx-2
+      h2.h2 Document Repository
+      / p.my-2
+
+    div.divider
+
+    .container
+    - if @docs
+      .bg-secondary: h4 Documents
+      - if @docs.empty?
+        p No documents found.
+      - else
+        table.table.table-striped.table-hover
+          thead: tr
+            th IRGN
+            th Title
+            th Contributor
+            th Assigned
+            th Published
+          tbody
+            - @docs.each do |d|
+              tr
+                td = d.doc_id
+                td: a href="/doc/#{d.doc_id}" = d.title
+                td
+                td = d.assigned_on
+                td = d.published_on
+
+    - if @mems
+      div.divider
+      .bg-secondary: h4 Memos
+      - if @mems.empty?
+        p No memos found.
+      - else
+        table.table.table-striped.table-hover
+          thead: tr
+            th Codename
+            th Title
+            th Contributor
+            th Date
+          tbody
+            - @mems.each do |m|
+              tr
+                td = m.short_name
+                td: a href="/doc/#{m.short_name}" = m.title
+                td
+                td = m.assigned_on

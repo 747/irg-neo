@@ -130,6 +130,14 @@ class IRGT < Sinatra::Base
     slim :gallery
   end
 
+  get '/docs/?:list?' do
+    @note = []
+    @docs = Document.all.order(doc_id: :desc)
+    @mems = Memorandum.all(:m).where_not('m:Document').order(assigned_on: :desc)
+
+    slim :repo
+  end
+
   post '/edit-motion/:docid/:charid' do
     begin
       fields = JSON.parse request.body.read
