@@ -30,7 +30,10 @@ class IRGT < Sinatra::Base
   end
 
   get '/' do
-    'TODO!'
+    @docs = Document.all.order(published_on: :desc).limit(5).map { |e| {name: e.title, num: e.doc_id} }
+    @sets = Series.all.order(created_at: :desc).limit(5).map { |e| {name: e.name, num: e.short_name} }
+
+    slim :portal
   end
 
   get '/images/*' do

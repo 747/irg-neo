@@ -1,0 +1,47 @@
+doctype 5
+html lang='en'
+  head
+    == slim :_include
+    title Repository
+
+  body
+    header.navbar.bg-secondary
+      .navbar-section
+      .navbar-center
+        h1
+          ' IRG Tracker
+          span.h2.text-normal.label.label-warning WIP
+      .navbar-section
+
+    .container
+      .columns
+        .column.col-6.col-sm-12.panel
+          .panel-header
+            .panel-title Recent Documents
+          .panel-body
+            - @docs.each do |e|
+              a.tile.tile-centered href="/doc/#{e[:num]}"
+                .tile-content
+                  .tile-title.text-bold = e[:name]
+                  .tile-subtitle.text-gray = e[:num]
+          .panel-footer
+            a.btn.btn-primary href='/docs' See more...
+
+        .column.col-6.col-sm-12.panel
+          .panel-header
+            .panel-title Recent Collections
+          .panel-body
+            - @sets.each do |e|
+              .tile.tile-centered
+                .tile-content
+                  .tile-title.text-bold = e[:name]
+                  .tile-subtitle.text-gray = e[:num]
+          .panel-footer
+            .btn.disabled TODO
+
+        .column.col-6.col-sm-12.panel
+          .panel-header
+            .panel-title Agenda
+          .panel-body
+          .panel-footer
+            .btn.disabled TODO
