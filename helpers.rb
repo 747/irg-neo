@@ -75,7 +75,7 @@ module BuilderUtils
       .flatten(1)
   end
 
-  def query_motion_gallery(doc)
+  def query_motion_gallery(doc, start=0, range=200)
     doc.motions(:m).char.query_as(:c)
       .optional_match('(m)-[:HAS_GLYPH]->(g)').break
       .optional_match('(c)-[cr:CONSTITUTES]->(cs:Series)').break
@@ -89,6 +89,7 @@ module BuilderUtils
       )
       .return(:source, :in, :glyph, :filetype, :path, :status)
       .order('status ASC, source ASC')
+      .skip(start).limit(range)
       .to_a.map(&:to_h)
   end
 end

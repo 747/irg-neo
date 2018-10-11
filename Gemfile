@@ -16,6 +16,7 @@ gem 'neo4j'
 gem 'roo'
 gem 'roo-xls'
 gem 'hashdiff'
+gem 'pagy', '>= 0.6.0'
 
 group :development do
   gem 'neo4j-rake_tasks'

@@ -7,14 +7,27 @@ require 'sinatra/reloader' #if development?
 require 'sinatra/multi_route'
 require 'sinatra/url_for'
 require 'json'
+require 'pagy'
+require 'pagy/extras/array'
+require 'pagy/extras/trim'
+require 'pagy/extras/bootstrap' # practically spectre-compatible
 
 class IRGT < Sinatra::Base
+  include Pagy::Backend
   register Sinatra::MultiRoute
   set :bind, '0.0.0.0'
   # set :port, 80 if Sinatra::Base.environment == 'production'
   helpers RadicalUtils
   helpers BuilderUtils
   helpers Sinatra::UrlForHelper
+
+  helpers do
+    include Pagy::Frontend
+
+    def offset(perpage, page)
+      perpage * (page - 1)
+    end
+  end
 
   get '/' do
     'TODO!'
@@ -100,13 +113,16 @@ class IRGT < Sinatra::Base
     slim :carousel
   end
 
-  get '/docs/:docid' do
-    # とりあえず
+  get '/doc/:docid' do
     @note = []
+
     doc = Memorandum.find_by short_name: params[:docid]
     if doc
       @doc = doc
-      @motions = query_motion_gallery(@doc)
+      @unit = 200
+      count = @doc.motions.count
+      start = offset @unit, (params[:page].present? && params[:page].to_i > 0 ? params[:page].to_i : 1)
+      @pager, @motions = pagy_direct(query_motion_gallery(@doc, start, @unit), items: @unit, count: count)
     else
       @note << [:invalid_doc, params[:docid]]
     end
@@ -156,5 +172,12 @@ class IRGT < Sinatra::Base
       status 502
       body JSON.dump(doc: the_doc, char: the_char, cands: cands, fields: fields, t: target)
     end
+  end
+
+  private
+
+  def pagy_direct(array, vars={})
+    pagy = Pagy.new(page: params[:page], **vars)
+    return pagy, array
   end
 end

@@ -25,9 +25,10 @@ html lang='en'
       - [:motions].each do |r|
         .bg-secondary: h4 = r.to_s.capitalize
         - result = r == :motions ? @motions : @doc[r]
-        - if result.empty?
+        - if result.blank?
           p No #{r} found.
         - else
+          == pagy_nav_bootstrap @pager
           .gallery.columns
           - states = [nil, 'bg-postponed', 'bg-withdrawn']
           - result.each do |col|
