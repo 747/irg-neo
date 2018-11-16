@@ -1,0 +1,72 @@
+constants:
+  series:
+    name: 'IRG Working Set 2017'
+    short_name: 'WS2017'
+  prefixes: ['G', 'K', 'UK', 'SAT', 'T', 'UTC', 'V']
+  # origins:
+fields:
+  - [':number']
+  - [':comment']
+  - [':rad']
+  - [':sc']
+  - [':fs']
+  - [':ts']
+  - [':ids', null, null, !ruby/regexp '/\s*\/\s*/']
+  - [':total']
+  - [':code', 'G']
+  - [':glyph', 'G']
+  - [':similar', 'G']
+  - [null, 'G'] # G Ref. to Evidence doc
+  - [null, 'G'] # G Page No. in the document file(optional)
+  - [null, 'G'] # G Row No. in the Page (optional)
+  - [null, 'G'] # G Position in the Row (optional)
+  - [':evidence', 'G', !ruby/regexp '/(?<name>\S+\.[[:alpha:]]{3,4})(?: page(?<warn-after-page> ?)(?<page>\d+))?/i']
+  - [null, 'G'] # G Optional Information
+  - [':code', 'K']
+  - [':glyph', 'K']
+  - [':similar', 'K']
+  - [null, 'K'] # K Ref. to Evidence document
+  - [null, 'K'] # i1) Page No. in the evidence document (optional)
+  - [null, 'K'] # i2) Row No. in the page (optional)
+  - [null, 'K'] # i3) Position No. in the row (optional)
+  - [':evidence', 'K']
+  - [null, 'K'] # K Revised information (2018.03.16)
+  - [null, 'K'] # K Real Glyph
+  - [':code', 'UK']
+  - [':glyph', 'UK']
+  - [':similar', 'UK']
+  - [null, 'UK'] # UK Ref. to Evidence doc
+  - [null, 'UK'] # UK Title and Year
+  - [null, 'UK'] # UK Page No.
+  - [':evidence', 'UK', null, !ruby/regexp '/\s*;\s*/'] # UK PNG Image
+  - [null, 'UK'] # UK Font code point
+  - [null, 'UK'] # UK Mapping to traditional or simplified character
+  - [null, 'UK'] # UK SJT-11239-2001
+  - [null, 'UK'] # UK Notes
+  - [':code', 'SAT']
+  - [':glyph', 'SAT']
+  - [':similar', 'SAT']
+  - [':evidence', 'SAT']
+  - [null, 'SAT']
+  - [':code', 'T']
+  - [':glyph', 'T']
+  - [':similar', 'T']
+  - [null, 'T'] # T References to evidence documents A
+  - [null, 'T'] # T References to evidence documents B
+  - [':evidence', 'T', !ruby/regexp '/(?<name>\S+\.[[:alpha:]]{3})(?: page(?<warn-after-page> ?)(?<page>\d+))?/i', !ruby/regexp '/\s*\n\s*/']
+  - [null, 'T'] # T Real Glyph
+  - [':code', 'UTC']
+  - [':glyph', 'UTC']
+  - [':similar', 'UTC']
+  - [null, 'UTC'] # UTC Referenes to evidence
+  - [null, 'UTC'] # UTC SJ/T 11239-2001
+  - [':code', 'V']
+  - [':glyph', 'V']
+  - [':similar', 'V']
+  - [null, 'V'] # V Reading
+  - [null, 'V'] # V Evidence
+  - [':evidence', 'V']
+  - [null, 'V'] # V Code Point
+  - [null, 'V'] # V Note
+  - [null] # WS2015 SN
+  

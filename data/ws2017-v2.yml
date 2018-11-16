@@ -1,0 +1,29 @@
+document:
+  doc_id: 'IRGN2309'
+  title: 'WS 2017 Version 2.0'
+  assigned_on: '2017-05-23'
+  published_on: '2017-07-15'
+  skip_sheets: [2]
+  skip_rows:
+    - [1, 230] # pure duplicated line
+  format: 'ws2017.attributes'
+
+override:
+  712:
+    unified:
+      name: 709
+  1053:
+    unified:
+      name: 1049
+  1852:
+    unified:
+      name: 185
+  2306:
+    unified:
+      name: UK-02652
+  2903:
+    unified:
+      name: UK-02658
+  4566:
+    unified:
+      name: 4565

@@ -86,6 +86,8 @@ spr.sheets.size.times do |num| # How to officially do `each_with_pagename.with_i
   sheet.each_with_index { |ch, ri|
     if ri == 0
       header = ch.map(&:strip); next
+    elsif docdef[:skip_rows]&.include?([num, ri])
+      next
     end
 
     print "\rparsing -- #{num}#{'(live)' if live}: #{ri}" << (' ' * 10)
@@ -156,7 +158,7 @@ chars.each.with_index do |ch, chi|
       (?=\s+|\Z)
     /x
     target = /
-      (?<withdrawn>Withdrawn?)|
+      (?<withdrawn>Withd(?<warn-typo-4-1>r?)awn?)|
       (?<postponed>Postponed|Pe(?<unwarn-typo-3-2>i?)n(?<unwarn-typo-3-1>g?)ding)|
       (?<not>Not\g<s>*(?:\g<unified>\g<warn-typo-1-2>\g<to>|\g<to>))| # pre-feed negative match to bleed positive
         (?:
@@ -168,6 +170,7 @@ chars.each.with_index do |ch, chi|
         )?
         (?:
           (?<to>
+            (?<to-cd>(?-i)(?!U\+)[A-Z][-A-Z0-9\.]{4,}(?i)[0-9])|
             (?<to-sn>0\d{4})|
             (?<to-un>(?:U\+)?(?<unwarn-typo-1-3>\s?)[[:xdigit:]]{4,5})
           )
@@ -188,11 +191,12 @@ chars.each.with_index do |ch, chi|
     failed_comments.each { |f| warnh[chi, "Please check the effectless comment '#{f}'"] }
     warnh[chi, "No valid rejection comment! '#{ch[:comment]}'"] if remarks.blank?
 
-    case remarks.first&.keys&.select { |k| ['unified', 'to', 'ivd', 'postponed', 'withdrawn'].include? k }&.first
+    remark = remarks.first
+    proofread[ch[:comment], remark, chi, :comment, warnh]
+
+    case remark&.keys&.select { |k| ['unified', 'to', 'ivd', 'postponed', 'withdrawn'].include? k }&.first
     when 'unified', 'to', 'ivd'
-      remark = remarks.first
-      proofread[ch[:comment], remark, chi, :comment, warnh]
-      r2u, r2s, rinfo, rivd = remark['to-un'], remark['to-sn'], remark['info']&.delete('()'), remark['ivd']
+      r2c, r2u, r2s, rinfo, rivd = remark['to-cd'], remark['to-un'], remark['to-sn'], remark['info']&.delete('()'), remark['ivd']
       if r2u
         uc = r2u.delete('U+').hex.chr('UTF-8')
         warnh[chi, "Please check the codepoint sanity of #{r2u}/#{uc} vs #{ch[:ids]}"]
@@ -206,6 +210,9 @@ chars.each.with_index do |ch, chi|
         else
           warnh[chi, "Nonexistent character reference to #{r2u}!"]
         end
+      elsif r2c
+        ch[:unified] = {name: r2c}
+        warnh[chi, "Nonexistent source reference to #{r2c}!"] if Character.find_by(code: r2c).blank?
       elsif r2s
         sn = r2s.to_i
         target = chars[sn]
@@ -228,6 +235,22 @@ chars.each.with_index do |ch, chi|
 end
 print "\n"
 
+# force to override properties
+if forced
+  pointed = forced.keys
+  print "manually overriding..."
+  chars.each.with_index { |ch, chi|
+    next if ch.blank?
+
+    print "\rmanually overriding -- ##{chi}"
+    if pointed.include?(chi)
+      forced[chi].each { |k, v| ch[k] = v }
+      warnh[chi, "Overridden #{forced[chi].keys.join(', ')}"]
+    end
+  }
+end
+print "\n"
+
 # check ref. consistency and offset property values
 trash_bin = {}
 group = -> n, prefix {
@@ -240,7 +263,7 @@ chars.each.with_index do |ch, chi|
   next unless ch
   trace = chain[chi]
 
-  print "\rchecking unification -- ##{chi}"#; warnh[chi, trace.map{|t|'%05d' % t}.join(' -> ')] if trace.present?
+  print "\rchecking unification -- ##{chi}"
   trace.each { |t|
     prefixes.each do |pf|
       next unless (my_attrs = group[chi, pf])
@@ -293,13 +316,6 @@ open(Pathname('./output/check') + "#{Time.now.strftime($TIMESTAMP)}_#{s[:short_n
   warnings.each { |wa| w.puts wa }
 end
 
-# force to override properties
-if forced
-  chars.each { |ch|
-    forced[ch[:code]].each { |k, v| ch[k] = v } if forced.include?(ch[:code])
-  }
-end
-
 # update!
 if testing
   open(Pathname('./output/preview') + "#{Time.now.strftime($TIMESTAMP)}_#{docdef[:doc_id]}.yml", "w:utf-8") { |t|
@@ -311,6 +327,15 @@ else
   print "retrieving chars..."
   characters = Character.all.where(code: chars.compact.map { |c| c[:code] }).map { |e| [e[:code], e] }.to_h
   puts "\r#{characters.size} existing chars found"
+
+  print "cleaning up DB..."
+  # めんどくさいので一旦削除
+  query = Neo4j::Core::Query.new
+    .match("(s:Series {name: '#{set[:name]}'})--(c:Character)--(m:CharMotion)--(d:Document {doc_id: '#{doc[:doc_id]}'})")
+    .detach_delete(:m).return('count(m)')
+  result = Neo4j::ActiveBase.current_session.query(query)
+  existing = result.rows[0][0]
+  puts "\rdeleted #{existing} motions on DB"
 
   print "retrieving glyphs..."
   # TODO name clash between different IRGN?
@@ -336,19 +361,11 @@ else
   end.execute(added_evids)
   puts "#{added_evids.size} new evidences added"
 
-  print "cleaning up DB..."
-  # めんどくさいので一旦削除
-  query = Neo4j::Core::Query.new
-    .match("(s:Series {name: '#{set[:name]}'})--(c:Character)--(m:CharMotion)--(d:Document {doc_id: '#{doc[:doc_id]}'})")
-    .detach_delete(:m).return('count(m)')
-  result = Neo4j::ActiveBase.current_session.query(query)
-  existing = result.rows[0][0]
-  puts "\rdeleted #{existing} motions on DB"
-
   print "updating DB..."
   rad2int = -> r { (r.to_f * 10).round }
   internal_refs = []
   unicode_refs = []
+  external_refs = []
 
   TransactionalExec.new(1000) do |ch, chi|
     next if ch.blank?
@@ -381,9 +398,10 @@ else
           case u[:name]
           when Integer
             internal_refs << [chi, u[:name], u.except(:name)]
-          when String
+          when /^[\p{Ideographic}]+$/
             unicode_refs << [chi, u[:name], u.except(:name)]
-          # TODO to another WS
+          when String
+            external_refs << [chi, u[:name], u.except(:name)]
           end
         }
         motion.status = :withdrawn
@@ -414,8 +432,18 @@ else
   }
   print "\n"
   print "  externals..."
+  external_refs.each.with_index(1) { |r, idx|
+    print "\r  externals -- #{idx}/#{external_refs.size}"
+    if (origin = set.chars(:c).rel_where(serial: r[0]).motions(:m).document.match_to(doc).pluck(:m).first)
+      UnifiedBy.create! origin, Character.find_by!(code: r[1]), r[2]
+    else
+      raise "Invalid serial number #{r[0]} under #{set.short_name}"
+    end
+  }
+  print "\n"
+  print "  code points..."
   unicode_refs.each.with_index(1) { |r, idx|
-    print "\r  externals -- #{idx}/#{unicode_refs.size}"
+    print "\r  code points -- #{idx}/#{unicode_refs.size}"
     if (origin = set.chars(:c).rel_where(serial: r[0]).motions(:m).document.match_to(doc).pluck(:m).first)
       UnifiedBy.create! origin, Character.find_by!(utf8: r[1]), r[2]
     else

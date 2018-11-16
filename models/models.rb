@@ -232,7 +232,7 @@ end
 class Constitutes
   include Neo4j::ActiveRel
   include Neo4j::Timestamps
-  creates_unique
+  # creates_unique
   from_class :Character
   to_class :Series
 
